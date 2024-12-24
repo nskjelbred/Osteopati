@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osteopati-Skjelbred.no</title>
+    <title>Osteopati-Klinikken Skjelbred</title>
     <style>
         /* Reset */
         * {
@@ -21,7 +21,6 @@
             display: flex;
             flex-direction: column;
             background-color: #f5faff;
-            margin: 0;
         }
 
         /* Header Section */
@@ -29,27 +28,24 @@
             background: linear-gradient(135deg, #0277bd, #01579b);
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             position: relative;
         }
 
         header img.logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            position: absolute;
-            top: 20px;
-            left: 20px;
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
         }
 
         header h1 {
             font-size: 2.5em;
             font-weight: bold;
+            margin-bottom: 10px;
         }
 
         header p {
             font-size: 1.2em;
-            margin-top: 10px;
         }
 
         /* Navigation Bar */
@@ -57,14 +53,15 @@
             background-color: #01579b;
             display: flex;
             justify-content: center;
-            padding: 15px;
+            padding: 10px;
+            flex-wrap: wrap;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             font-size: 1em;
-            margin: 0 15px;
+            margin: 10px 15px;
             transition: color 0.3s ease-in-out;
         }
 
@@ -74,9 +71,12 @@
 
         /* Main Content Section */
         main {
-            flex: 1; /* Makes the main content grow to fill available space */
+            flex: 1;
             padding: 40px 20px;
-            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #03396c;
         }
 
         main h2 {
@@ -86,33 +86,34 @@
         }
 
         main p {
-            font-size: 1em;
-            color: #03396c;
-            max-width: 800px;
-            margin: 0 auto;
+            margin-bottom: 15px;
+            font-size: 1.1em;
         }
 
-        /* Booking Button */
-        .booking-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            margin-top: 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: white;
-            background: #0277bd;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        main ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
         }
 
-        .booking-btn:hover {
-            background: #01579b;
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        main ul li {
+            list-style-type: square;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact h3 {
+            color: #01579b;
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            margin-bottom: 5px;
+            font-size: 1.1em;
         }
 
         /* Footer Section */
@@ -121,117 +122,68 @@
             color: white;
             text-align: center;
             padding: 20px;
-            margin-top: auto; /* Ensures footer stays at the bottom */
+            margin-top: auto;
         }
 
         footer p {
             font-size: 0.9em;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            nav {
-                flex-wrap: wrap;
-                padding: 10px;
-            }
-
-            nav a {
-                font-size: 0.9em;
-                margin: 5px 10px;
-            }
-
-            main h2 {
-                font-size: 1.8em;
-            }
-
-            main p {
-                font-size: 0.9em;
-                padding: 0 10px;
-            }
-
-            .booking-btn {
-                font-size: 1em;
-                padding: 12px 25px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header img.logo {
-                width: 60px;
-                height: 60px;
-                top: 15px;
-                left: 15px;
-            }
-
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            header p {
-                font-size: 0.9em;
-            }
-
-            nav a {
-                font-size: 0.8em;
-            }
-
-            main h2 {
-                font-size: 1.5em;
-            }
-
-            main p {
-                font-size: 0.8em;
-            }
-
-            .booking-btn {
-                font-size: 0.9em;
-                padding: 10px 20px;
-            }
-
-            footer p {
-                font-size: 0.8em;
-            }
+        footer a {
+            color: white;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <img src="https://via.placeholder.com/80" alt="Logo" class="logo">
-        <h1>Osteopati-Skjelbred.no</h1>
-        <p>Din spesialist i biodynamisk osteopati og helhetlig velvære</p>
+        <img src="processed_logo.png" alt="Osteopati-Klinikken Skjelbred Logo" class="logo">
+        <h1>Osteopati-Klinikken Skjelbred</h1>
+        <p>Biodynamisk Osteopati</p>
     </header>
 
     <!-- Navigation Bar -->
     <nav>
-        <a href="#about">Om oss</a>
-        <a href="#services">Tjenester</a>
+        <a href="#about">Om meg</a>
+        <a href="#osteopati">Biodynamisk Osteopati</a>
+        <a href="#contact">Kontakt</a>
     </nav>
 
     <!-- Main Content -->
     <main>
-        <h2 id="about">Velkommen til Osteopati-Skjelbred.no</h2>
-        <p>
-            Vi er eksperter innen biodynamisk osteopati, en skånsom og effektiv behandlingsform som hjelper kroppen med å gjenopprette balanse og velvære.
-            Vår tilnærming kombinerer tradisjonelle metoder med moderne teknikker for å sikre best mulig behandling for deg.
-        </p>
+        <section id="about">
+            <h2>Om meg</h2>
+            <p><strong>Ivar Otto Skjelbred</strong></p>
+            <p>Osteopat D.O.</p>
+            <p>Spesialist i barneosteopati</p>
+            <p>Medlem av det Norske Osteopatiforbund (MNOF)</p>
+            <p>LinkedIn: <a href="#">Trykk her</a></p>
+            <p>Facebook: <a href="#">Trykk her</a></p>
+        </section>
 
-        <!-- Booking Button -->
-        <a href="mailto:info@osteopati-skjelbred.no" class="booking-btn">Bestill Time</a>
+        <section id="osteopati">
+            <h2>Biodynamisk Osteopati</h2>
+            <p>Hva er biodynamisk (tradisjonell) osteopati?</p>
+            <p>Osteopati er en spesifikk og fremfor alt helhetlig manuell medisinsk tilnærming. Det er en behandlingsform som ivaretar hele mennesket.</p>
+            <p>Osteopatiens opprinnelse går tilbake til slutten av 1800-tallet. Den amerikanske legen Andrew Taylor Still oppdaget at kroppen hadde selvregulerende evner, slik at når den blir hjulpet på en naturlig måte, kan kroppen selv gjenopprette normale fysiologiske funksjonsforhold.</p>
+            <p>Kroppen vår er veldig tilpasningsdyktig...</p>
+            <p>Les mer om osteopatisk behandling og hvordan jeg jobber.</p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h3>Kontakt</h3>
+            <p><strong>Mail:</strong> kontakt@skjelbred-osteopati.no</p>
+            <p><strong>Adresse:</strong> Sangereidlia 78, 4790 Lillesand</p>
+            <p>Det er godt merket med skilt opp til oss i 4 etg.</p>
+            <p>Klinikken har lokale i NMS - Nordland Medisinke Senter.</p>
+            <p><strong>Telefon:</strong> 988 36 655</p>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Osteopati-Skjelbred.no. Alle rettigheter reservert.</p>
-        <p>Kontakt oss på: info@osteopati-skjelbred.no | +47 123 456 789</p>
+        <p>&copy; 2025 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
     </footer>
 </body>
 </html>
