@@ -39,29 +39,30 @@
         /* Header Section */
         header {
             text-align: center;
-            background: linear-gradient(135deg, #0277bd, #01579b);
-            color: white;
-            padding: 40px 20px;
+            background-color: white; /* White background for the logo section */
+            color: #03396c; /* Text color for titles */
+            padding: 50px 20px;
             width: 100%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
         }
 
         header img.logo {
-            width: 250px; /* Increased size for better visibility */
+            width: 300px; /* Larger logo */
             height: auto;
             margin-bottom: 20px;
             animation: fadeIn 1.5s ease-in-out; /* Add smooth fade-in animation */
         }
 
         header h1 {
-            font-size: 2.5em;
-            font-family: 'Georgia', serif; /* Professional font for the title */
+            font-size: 2.8em;
+            font-family: 'Georgia', serif;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         header p {
-            font-size: 1.2em;
-            font-family: 'Verdana', sans-serif; /* Clean and modern font for subtitle */
+            font-size: 1.4em;
+            font-family: 'Verdana', sans-serif;
         }
 
         /* Main Content Section */
@@ -72,7 +73,7 @@
             margin: 20px auto;
             line-height: 1.8;
             color: #03396c;
-            text-align: center; /* Center align text */
+            text-align: center;
         }
 
         main h2 {
@@ -115,7 +116,8 @@
 
         .map-container iframe {
             width: 100%;
-            height: 300px;
+            max-width: 800px;
+            height: 400px;
             border: 0;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -142,15 +144,15 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             header img.logo {
-                width: 200px; /* Adjusted for smaller devices */
+                width: 250px; /* Adjusted for smaller devices */
             }
 
             header h1 {
-                font-size: 2em;
+                font-size: 2.4em;
             }
 
             header p {
-                font-size: 1em;
+                font-size: 1.2em;
             }
 
             main h2 {
@@ -166,19 +168,23 @@
                 font-size: 0.9em;
                 padding: 12px 20px;
             }
+
+            .map-container iframe {
+                height: 300px;
+            }
         }
 
         @media (max-width: 480px) {
             header img.logo {
-                width: 150px; /* Adjusted for mobile screens */
+                width: 200px;
             }
 
             header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             header p {
-                font-size: 0.9em;
+                font-size: 1em;
             }
 
             main h2 {
@@ -194,6 +200,10 @@
                 font-size: 0.8em;
                 padding: 10px 15px;
             }
+
+            .map-container iframe {
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -207,23 +217,36 @@
 
     <!-- Main Content -->
     <main>
-        <h2>Kontakt Oss</h2>
-        <p>Vi hjelper deg med å finne balansen og velvære gjennom biodynamisk osteopati.</p>
-        <!-- Buttons -->
-        <a href="mailto:kontakt@skjelbred-osteopati.no" class="btn">Send E-Post</a>
-        <a href="tel:98836655" class="btn">Ring Oss</a>
+        <!-- Om Meg Section -->
+        <section id="about">
+            <h2>Om Meg</h2>
+            <p><strong>Ivar Otto Skjelbred</strong></p>
+            <p>Osteopat D.O.</p>
+            <p>Spesialist i barneosteopati</p>
+            <p>Medlem av det Norske Osteopatiforbund (MNOF)</p>
+        </section>
 
-        <!-- Google Maps -->
-        <div class="map-container">
-            <h2>Hvor finner du oss?</h2>
-            <p><strong>Adresse:</strong> Sangereidlia 78, 4790 Lillesand</p>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1958.8391826365336!2d8.377259!3d58.250129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46380a7c9b91a02b%3A0x486c012a4d9d7a45!2sSangereidlia%2078%2C%204790%20Lillesand!5e0!3m2!1sen!2sno!4v1684596718539!5m2!1sen!2sno"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
+        <!-- Kontakt Oss Section -->
+        <section id="contact">
+            <h2>Kontakt Oss</h2>
+            <p>Vi hjelper deg med å finne balansen og velvære gjennom biodynamisk osteopati.</p>
+            <!-- Buttons -->
+            <a href="mailto:kontakt@skjelbred-osteopati.no" class="btn">Send E-Post</a>
+            <a href="tel:98836655" class="btn">Ring Oss</a>
+            <a href="#" class="btn">Lag Time</a>
+
+            <!-- Google Maps -->
+            <div class="map-container">
+                <h2>Hvor finner du oss?</h2>
+                <p><strong>Adresse:</strong> Sangereidlia 78, 4790 Lillesand</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1958.8391826365336!2d8.377259!3d58.250129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46380a7c9b91a02b%3A0x486c012a4d9d7a45!2sSangereidlia%2078%2C%204790%20Lillesand!5e0!3m2!1sen!2sno!4v1684596718539!5m2!1sen!2sno"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
