@@ -61,29 +61,20 @@
         header img.logo {
             width: 80px;
             height: auto;
-            margin-right: 20px;
-        }
-
-        header .title-container {
-            display: flex;
-            flex-direction: column;
+            position: absolute;
+            left: 20px;
         }
 
         header h1 {
             font-size: 1.8em;
             font-family: 'Georgia', serif;
             font-weight: bold;
-            margin: 0;
+            text-align: center;
+            margin: 0 auto;
+            flex: 1;
         }
 
-        header p.subtitle {
-            font-size: 1em;
-            font-family: 'Verdana', sans-serif;
-            margin-top: 5px;
-        }
-
-        /* Dark Theme Toggle Button */
-        .dark-mode-toggle {
+        header .dark-mode-toggle {
             background-color: var(--button-bg);
             color: var(--text-color);
             border: none;
@@ -94,7 +85,7 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .dark-mode-toggle:hover {
+        header .dark-mode-toggle:hover {
             background-color: var(--button-hover-bg);
         }
 
@@ -193,10 +184,6 @@
                 font-size: 1.6em;
             }
 
-            header p.subtitle {
-                font-size: 0.9em;
-            }
-
             main h2 {
                 font-size: 1.5em;
             }
@@ -225,10 +212,6 @@
                 font-size: 1.4em;
             }
 
-            header p.subtitle {
-                font-size: 0.8em;
-            }
-
             main h2 {
                 font-size: 1.3em;
             }
@@ -253,10 +236,7 @@
     <!-- Header -->
     <header>
         <img src="velkommen.png" alt="Osteopati-Klinikken Skjelbred Logo" class="logo">
-        <div class="title-container">
-            <h1>Osteopati-Klinikken Skjelbred</h1>
-            <p class="subtitle">Hjertelig velkommen!</p>
-        </div>
+        <h1>Osteopati-Klinikken Skjelbred</h1>
         <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
     </header>
 
@@ -301,7 +281,8 @@
 
     <script>
         function toggleDarkMode() {
-            document.body.toggleAttribute('data-theme', 'dark');
+            const body = document.body;
+            body.toggleAttribute('data-theme', 'dark');
         }
     </script>
 </body>
