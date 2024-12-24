@@ -24,24 +24,12 @@
             background-color: #f5faff;
         }
 
-        /* Smooth Fade-in Effect for the Logo */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         /* Header Section */
         header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            background-color: white; /* White background for logo and title */
+            justify-content: flex-start;
+            background-color: white; /* White background for header */
             color: #03396c; /* Title text color */
             padding: 20px 50px;
             width: 100%;
@@ -52,21 +40,25 @@
             width: 80px; /* Smaller logo */
             height: auto;
             margin-right: 20px; /* Space between logo and title */
-            animation: fadeIn 1.5s ease-in-out; /* Add smooth fade-in animation */
+        }
+
+        header .title-container {
+            display: flex;
+            flex-direction: column;
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 1.8em;
             font-family: 'Georgia', serif;
             font-weight: bold;
             margin: 0;
         }
 
         header p.subtitle {
-            font-size: 1.4em;
+            font-size: 1em;
             font-family: 'Verdana', sans-serif;
             color: #555;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         /* Main Content Section */
@@ -95,15 +87,15 @@
         /* Button Styles */
         .btn {
             display: inline-block;
-            padding: 15px 25px;
+            padding: 12px 20px;
             margin: 10px;
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: bold;
             color: white;
             background-color: #0277bd;
             text-decoration: none;
             border: none;
-            border-radius: 8px; /* Rounded corners */
+            border-radius: 5px; /* Rounded corners */
             cursor: pointer;
             transition: background-color 0.3s ease-in-out, transform 0.2s ease;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
@@ -162,11 +154,11 @@
             }
 
             header h1 {
-                font-size: 2.2em;
+                font-size: 1.6em;
             }
 
             header p.subtitle {
-                font-size: 1.2em;
+                font-size: 0.9em;
             }
 
             main h2 {
@@ -179,8 +171,8 @@
             }
 
             .btn {
-                font-size: 1em;
-                padding: 12px 20px;
+                font-size: 0.9em;
+                padding: 10px 18px;
             }
 
             .map-container iframe {
@@ -194,11 +186,11 @@
             }
 
             header h1 {
-                font-size: 2em;
+                font-size: 1.4em;
             }
 
             header p.subtitle {
-                font-size: 1em;
+                font-size: 0.8em;
             }
 
             main h2 {
@@ -211,8 +203,8 @@
             }
 
             .btn {
-                font-size: 0.9em;
-                padding: 10px 15px;
+                font-size: 0.8em;
+                padding: 8px 15px;
             }
 
             .map-container iframe {
@@ -225,7 +217,7 @@
     <!-- Header -->
     <header>
         <img src="velkommen.png" alt="Osteopati-Klinikken Skjelbred Logo" class="logo">
-        <div>
+        <div class="title-container">
             <h1>Osteopati-Klinikken Skjelbred</h1>
             <p class="subtitle">Hjertelig velkommen!</p>
         </div>
