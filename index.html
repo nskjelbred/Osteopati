@@ -74,19 +74,73 @@
             flex: 1;
         }
 
-        header .dark-mode-toggle {
-            background-color: var(--button-bg);
-            color: var(--text-color);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s ease, color 0.3s ease;
+        /* Toggle Switch */
+        .theme-toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
         }
 
-        header .dark-mode-toggle:hover {
-            background-color: var(--button-hover-bg);
+        .theme-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #4CAF50;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+
+        /* Icons for Light and Dark Modes */
+        .slider .icon {
+            font-size: 14px;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        input:checked + .slider .icon {
+            color: white;
+        }
+
+        .icon.sun {
+            margin-left: 3px;
+        }
+
+        .icon.moon {
+            margin-right: 3px;
         }
 
         /* Main Content Section */
@@ -237,7 +291,13 @@
     <header>
         <img src="velkommen.png" alt="Osteopati-Klinikken Skjelbred Logo" class="logo">
         <h1>Osteopati-Klinikken Skjelbred</h1>
-        <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+        <label class="theme-toggle">
+            <input type="checkbox" id="theme-switch">
+            <span class="slider">
+                <span class="icon sun">☀️</span>
+                <span class="icon moon">🌙</span>
+            </span>
+        </label>
     </header>
 
     <!-- Main Content -->
@@ -280,10 +340,10 @@
     </footer>
 
     <script>
-        function toggleDarkMode() {
-            const body = document.body;
-            body.toggleAttribute('data-theme', 'dark');
-        }
+        const themeSwitch = document.getElementById('theme-switch');
+        themeSwitch.addEventListener('change', () => {
+            document.body.toggleAttribute('data-theme', 'dark');
+        });
     </script>
 </body>
 </html>
