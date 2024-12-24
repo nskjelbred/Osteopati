@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osteopati-Skjelbred.no</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #03396c;
+            background-color: #f5faff;
+            margin: 0;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #0277bd, #01579b);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        header img.logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #01579b;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            margin: 0 15px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Main Content Section */
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        main h2 {
+            color: #01579b;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        main p {
+            font-size: 1em;
+            color: #03396c;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Booking Button */
+        .booking-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            background: #0277bd;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-btn:hover {
+            background: #01579b;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Section */
+        footer {
+            background: #01579b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+
+            nav a {
+                font-size: 0.9em;
+                margin: 5px 10px;
+            }
+
+            main h2 {
+                font-size: 1.8em;
+            }
+
+            main p {
+                font-size: 0.9em;
+                padding: 0 10px;
+            }
+
+            .booking-btn {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img.logo {
+                width: 60px;
+                height: 60px;
+                top: 15px;
+                left: 15px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            nav a {
+                font-size: 0.8em;
+            }
+
+            main h2 {
+                font-size: 1.5em;
+            }
+
+            main p {
+                font-size: 0.8em;
+            }
+
+            .booking-btn {
+                font-size: 0.9em;
+                padding: 10px 20px;
+            }
+
+            footer p {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="https://via.placeholder.com/80" alt="Logo" class="logo">
+        <h1>Osteopati-Skjelbred.no</h1>
+        <p>Din spesialist i biodynamisk osteopati og helhetlig velvære</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#about">Om oss</a>
+        <a href="#services">Tjenester</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h2 id="about">Velkommen til Osteopati-Skjelbred.no</h2>
+        <p>
+            Vi er eksperter innen biodynamisk osteopati, en skånsom og effektiv behandlingsform som hjelper kroppen med å gjenopprette balanse og velvære.
+            Vår tilnærming kombinerer tradisjonelle metoder med moderne teknikker for å sikre best mulig behandling for deg.
+        </p>
+
+        <!-- Booking Button -->
+        <a href="mailto:info@osteopati-skjelbred.no" class="booking-btn">Bestill Time</a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Osteopati-Skjelbred.no. Alle rettigheter reservert.</p>
+        <p>Kontakt oss på: info@osteopati-skjelbred.no | +47 123 456 789</p>
+    </footer>
+</body>
+</html>
