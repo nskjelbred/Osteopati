@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osteopati-Klinikken Skjelbred</title>
+    <title>Osteopati Skjelbred</title>
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
     <style>
         /* Reset */
         * {
@@ -183,11 +184,12 @@
         /* Contact Section */
         #contact {
             text-align: center;
+            margin-bottom: 15px; /* Added space below text */
         }
 
         #contact .btn {
             display: inline-block;
-            margin: 10px 10px; /* Adjust margin for spacing between buttons */
+            margin: 15px 10px; /* Increased spacing slightly */
         }
 
         /* Button Styles */
@@ -217,6 +219,11 @@
 
         .btn.primary:hover {
             background-color: var(--primary-button-hover-bg);
+        }
+
+        /* Location Section */
+        #location p {
+            margin-bottom: 20px; /* Added spacing between address text and map */
         }
 
         /* Footer Section */
@@ -290,7 +297,7 @@
 <body>
     <!-- Header -->
     <header>
-        <img src="velkommen.png" alt="Osteopati-Klinikken Skjelbred Logo" class="logo">
+        <img src="logo.jpg" alt="Osteopati-Klinikken Skjelbred Logo" class="logo">
         <h1>Osteopati-Klinikken Skjelbred</h1>
         <label class="theme-toggle">
             <input type="checkbox" id="theme-switch">
@@ -314,10 +321,10 @@
 
         <!-- Kontakt Oss Section -->
         <section id="contact">
-            <h2>Kontakt Oss</h2>
+            <h2>Kontakt</h2>
             <p>Vi hjelper deg med å finne balansen og velvære gjennom biodynamisk osteopati.</p>
             <a href="mailto:kontakt@skjelbred-osteopati.no" class="btn">Send E-Post</a>
-            <a href="tel:98836655" class="btn">Ring Oss</a>
+            <a href="tel:98836655" class="btn">Ring</a>
             <a href="#" class="btn primary">Bestill Time</a>
         </section>
 
