@@ -21,8 +21,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             background-color: #f5faff;
+        }
+
+        /* Smooth Fade-in Effect for the Logo */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Header Section */
@@ -35,19 +46,22 @@
         }
 
         header img.logo {
-            width: 100px;
+            width: 120px;
             height: auto;
             margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out; /* Add smooth fade-in animation */
         }
 
         header h1 {
-            font-size: 2em;
+            font-size: 2.5em;
+            font-family: 'Georgia', serif; /* More professional font for the title */
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         header p {
             font-size: 1.2em;
+            font-family: 'Verdana', sans-serif; /* Clean and modern font for subtitle */
         }
 
         /* Navigation Bar */
@@ -78,30 +92,21 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
             line-height: 1.8;
             color: #03396c;
+            text-align: center; /* Center align text */
         }
 
         main h2 {
             color: #01579b;
             font-size: 1.8em;
+            font-family: 'Georgia', serif;
             margin-bottom: 20px;
         }
 
         main p {
             margin-bottom: 15px;
             font-size: 1em;
-        }
-
-        main ul {
-            margin-bottom: 20px;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        main ul li {
-            margin-bottom: 10px;
         }
 
         /* Contact Section */
@@ -140,7 +145,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             header p {
@@ -153,6 +158,7 @@
 
             main p {
                 font-size: 0.9em;
+                padding: 0 10px; /* Add padding for smaller screens */
             }
 
             .contact h3 {
@@ -170,11 +176,11 @@
 
         @media (max-width: 480px) {
             header img.logo {
-                width: 80px;
+                width: 90px;
             }
 
             header h1 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
 
             header p {
@@ -187,6 +193,7 @@
 
             main p {
                 font-size: 0.8em;
+                padding: 0 10px; /* Add padding for better readability */
             }
 
             .contact h3 {
