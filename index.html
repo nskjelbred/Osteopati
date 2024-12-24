@@ -38,32 +38,35 @@
 
         /* Header Section */
         header {
-            text-align: center;
-            background-color: white;
-            color: #03396c;
-            padding: 50px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white; /* White background for logo and title */
+            color: #03396c; /* Title text color */
+            padding: 20px 50px;
             width: 100%;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
         }
 
         header img.logo {
-            width: 300px;
+            width: 80px; /* Smaller logo */
             height: auto;
-            margin-bottom: 20px;
-            animation: fadeIn 1.5s ease-in-out;
+            margin-right: 20px; /* Space between logo and title */
+            animation: fadeIn 1.5s ease-in-out; /* Add smooth fade-in animation */
         }
 
         header h1 {
             font-size: 2.5em;
             font-family: 'Georgia', serif;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin: 0;
         }
 
         header p.subtitle {
             font-size: 1.4em;
             font-family: 'Verdana', sans-serif;
             color: #555;
+            margin-top: 10px;
         }
 
         /* Main Content Section */
@@ -94,7 +97,7 @@
             display: inline-block;
             padding: 15px 25px;
             margin: 10px;
-            font-size: 1.2em; /* Slightly larger font for visibility */
+            font-size: 1.2em;
             font-weight: bold;
             color: white;
             background-color: #0277bd;
@@ -155,11 +158,11 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             header img.logo {
-                width: 250px;
+                width: 60px; /* Adjusted for smaller devices */
             }
 
             header h1 {
-                font-size: 2.4em;
+                font-size: 2.2em;
             }
 
             header p.subtitle {
@@ -187,7 +190,7 @@
 
         @media (max-width: 480px) {
             header img.logo {
-                width: 200px;
+                width: 50px;
             }
 
             header h1 {
@@ -222,8 +225,10 @@
     <!-- Header -->
     <header>
         <img src="velkommen.png" alt="Osteopati-Klinikken Skjelbred Logo" class="logo">
-        <h1>Osteopati-Klinikken Skjelbred</h1>
-        <p class="subtitle">Hjertelig velkommen!</p>
+        <div>
+            <h1>Osteopati-Klinikken Skjelbred</h1>
+            <p class="subtitle">Hjertelig velkommen!</p>
+        </div>
     </header>
 
     <!-- Main Content -->
@@ -243,27 +248,26 @@
             <p>Vi hjelper deg med å finne balansen og velvære gjennom biodynamisk osteopati.</p>
             <!-- Buttons -->
             <a href="mailto:kontakt@skjelbred-osteopati.no" class="btn">Send E-Post</a>
-            <a href="tel:98836655" class="btn">Ring Oss</
-                <a href="#" class="btn primary">Bestill Time</a> <!-- Highlighted Button -->
+            <a href="tel:98836655" class="btn">Ring Oss</a>
+            <a href="#" class="btn primary">Bestill Time</a>
 
-                <!-- Google Maps -->
-                <div class="map-container">
-                    <h2>Hvor finner du oss?</h2>
-                    <p><strong>Adresse:</strong> Sangereidlia 78, 4790 Lillesand</p>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1958.8391826365336!2d8.377259!3d58.250129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46380a7c9b91a02b%3A0x486c012a4d9d7a45!2sSangereidlia%2078%2C%204790%20Lillesand!5e0!3m2!1sen!2sno!4v1684596718539!5m2!1sen!2sno"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </section>
-        </main>
-    
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2025 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
-        </footer>
-    </body>
-    </html>
-    
+            <!-- Google Maps -->
+            <div class="map-container">
+                <h2>Hvor finner du oss?</h2>
+                <p><strong>Adresse:</strong> Sangereidlia 78, 4790 Lillesand</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1958.8391826365336!2d8.377259!3d58.250129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46380a7c9b91a02b%3A0x486c012a4d9d7a45!2sSangereidlia%2078%2C%204790%20Lillesand!5e0!3m2!1sen!2sno!4v1684596718539!5m2!1sen!2sno"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
+    </footer>
+</body>
+</html>
