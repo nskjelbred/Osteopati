@@ -21,25 +21,47 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f5faff;
+            background-color: var(--background-color, #f5faff);
+            color: var(--text-color, #03396c);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Theme Variables */
+        :root {
+            --background-color: #f5faff;
+            --text-color: #03396c;
+            --header-bg: white;
+            --button-bg: #0277bd;
+            --button-hover-bg: #01579b;
+            --primary-button-bg: #4CAF50;
+            --primary-button-hover-bg: #43A047;
+        }
+
+        [data-theme="dark"] {
+            --background-color: #1a1a1a;
+            --text-color: #f5f5f5;
+            --header-bg: #333333;
+            --button-bg: #444444;
+            --button-hover-bg: #555555;
+            --primary-button-bg: #4CAF50;
+            --primary-button-hover-bg: #43A047;
         }
 
         /* Header Section */
         header {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            background-color: white; /* White background for header */
-            color: #03396c; /* Title text color */
+            justify-content: space-between;
+            background-color: var(--header-bg);
             padding: 20px 50px;
             width: 100%;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header img.logo {
-            width: 80px; /* Smaller logo */
+            width: 80px;
             height: auto;
-            margin-right: 20px; /* Space between logo and title */
+            margin-right: 20px;
         }
 
         header .title-container {
@@ -57,8 +79,23 @@
         header p.subtitle {
             font-size: 1em;
             font-family: 'Verdana', sans-serif;
-            color: #555;
             margin-top: 5px;
+        }
+
+        /* Dark Theme Toggle Button */
+        .dark-mode-toggle {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: var(--button-hover-bg);
         }
 
         /* Main Content Section */
@@ -68,12 +105,11 @@
             max-width: 800px;
             margin: 20px auto;
             line-height: 1.8;
-            color: #03396c;
             text-align: center;
         }
 
         main h2 {
-            color: #01579b;
+            color: var(--text-color);
             font-size: 1.8em;
             font-family: 'Georgia', serif;
             margin-bottom: 20px;
@@ -92,26 +128,26 @@
             font-size: 1em;
             font-weight: bold;
             color: white;
-            background-color: #0277bd;
+            background-color: var(--button-bg);
             text-decoration: none;
             border: none;
-            border-radius: 5px; /* Rounded corners */
+            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease-in-out, transform 0.2s ease;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .btn:hover {
-            background-color: #01579b;
-            transform: scale(1.05); /* Slight scale-up effect on hover */
+            background-color: var(--button-hover-bg);
+            transform: scale(1.05);
         }
 
         .btn.primary {
-            background-color: #FF9800; /* Highlighted button for Bestill Time */
+            background-color: var(--primary-button-bg);
         }
 
         .btn.primary:hover {
-            background-color: #FB8C00; /* Darker hover effect for visibility */
+            background-color: var(--primary-button-hover-bg);
         }
 
         /* Google Maps Section */
@@ -131,7 +167,7 @@
 
         /* Footer Section */
         footer {
-            background: #01579b;
+            background: var(--button-bg);
             color: white;
             text-align: center;
             padding: 20px;
@@ -150,7 +186,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             header img.logo {
-                width: 60px; /* Adjusted for smaller devices */
+                width: 60px;
             }
 
             header h1 {
@@ -221,6 +257,7 @@
             <h1>Osteopati-Klinikken Skjelbred</h1>
             <p class="subtitle">Hjertelig velkommen!</p>
         </div>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
     </header>
 
     <!-- Main Content -->
@@ -261,5 +298,11 @@
     <footer>
         <p>&copy; 2025 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
     </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.toggleAttribute('data-theme', 'dark');
+        }
+    </script>
 </body>
 </html>
