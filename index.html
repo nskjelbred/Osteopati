@@ -54,7 +54,7 @@
 
         header h1 {
             font-size: 2.5em;
-            font-family: 'Georgia', serif; /* More professional font for the title */
+            font-family: 'Georgia', serif; /* Professional font for the title */
             font-weight: bold;
             margin-bottom: 10px;
         }
@@ -64,34 +64,12 @@
             font-family: 'Verdana', sans-serif; /* Clean and modern font for subtitle */
         }
 
-        /* Navigation Bar */
-        nav {
-            background-color: #01579b;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-            margin: 10px 15px;
-            transition: color 0.3s ease-in-out;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-        }
-
         /* Main Content Section */
         main {
             flex: 1;
             padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 20px auto;
             line-height: 1.8;
             color: #03396c;
             text-align: center; /* Center align text */
@@ -109,19 +87,38 @@
             font-size: 1em;
         }
 
-        /* Contact Section */
-        .contact {
-            margin-top: 40px;
-        }
-
-        .contact h3 {
-            color: #01579b;
-            margin-bottom: 10px;
-        }
-
-        .contact p {
-            margin-bottom: 5px;
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            margin: 10px;
             font-size: 1em;
+            font-weight: bold;
+            color: white;
+            background-color: #0277bd;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #01579b;
+        }
+
+        /* Google Maps Section */
+        .map-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Footer Section */
@@ -158,19 +155,12 @@
 
             main p {
                 font-size: 0.9em;
-                padding: 0 10px; /* Add padding for smaller screens */
+                padding: 0 10px;
             }
 
-            .contact h3 {
-                font-size: 1.3em;
-            }
-
-            .contact p {
+            .btn {
                 font-size: 0.9em;
-            }
-
-            nav a {
-                font-size: 0.9em;
+                padding: 12px 20px;
             }
         }
 
@@ -193,19 +183,12 @@
 
             main p {
                 font-size: 0.8em;
-                padding: 0 10px; /* Add padding for better readability */
+                padding: 0 10px;
             }
 
-            .contact h3 {
-                font-size: 1.2em;
-            }
-
-            .contact p {
+            .btn {
                 font-size: 0.8em;
-            }
-
-            nav a {
-                font-size: 0.8em;
+                padding: 10px 15px;
             }
         }
     </style>
@@ -218,40 +201,25 @@
         <p>Biodynamisk Osteopati</p>
     </header>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#about">Om meg</a>
-        <a href="#osteopati">Biodynamisk Osteopati</a>
-        <a href="#contact">Kontakt</a>
-    </nav>
-
     <!-- Main Content -->
     <main>
-        <section id="about">
-            <h2>Om meg</h2>
-            <p><strong>Ivar Otto Skjelbred</strong></p>
-            <p>Osteopat D.O.</p>
-            <p>Spesialist i barneosteopati</p>
-            <p>Medlem av det Norske Osteopatiforbund (MNOF)</p>
-            <p>LinkedIn: <a href="#">Trykk her</a></p>
-            <p>Facebook: <a href="#">Trykk her</a></p>
-        </section>
+        <h2>Kontakt Oss</h2>
+        <p>Vi hjelper deg med å finne balansen og velvære gjennom biodynamisk osteopati.</p>
+        <!-- Buttons -->
+        <a href="mailto:kontakt@skjelbred-osteopati.no" class="btn">Send E-Post</a>
+        <a href="tel:98836655" class="btn">Ring Oss</a>
 
-        <section id="osteopati">
-            <h2>Biodynamisk Osteopati</h2>
-            <p>Hva er biodynamisk (tradisjonell) osteopati?</p>
-            <p>Osteopati er en spesifikk og fremfor alt helhetlig manuell medisinsk tilnærming. Det er en behandlingsform som ivaretar hele mennesket.</p>
-            <p>Osteopatiens opprinnelse går tilbake til slutten av 1800-tallet. Den amerikanske legen Andrew Taylor Still oppdaget at kroppen hadde selvregulerende evner, slik at når den blir hjulpet på en naturlig måte, kan kroppen selv gjenopprette normale fysiologiske funksjonsforhold.</p>
-            <p>Kroppen vår er veldig tilpasningsdyktig...</p>
-            <p>Les mer om osteopatisk behandling og hvordan jeg jobber.</p>
-        </section>
-
-        <section id="contact" class="contact">
-            <h3>Kontakt</h3>
-            <p><strong>Mail:</strong> kontakt@skjelbred-osteopati.no</p>
+        <!-- Google Maps -->
+        <div class="map-container">
+            <h2>Hvor finner du oss?</h2>
             <p><strong>Adresse:</strong> Sangereidlia 78, 4790 Lillesand</p>
-            <p><strong>Telefon:</strong> 988 36 655</p>
-        </section>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1958.8391826365336!2d8.377259!3d58.250129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46380a7c9b91a02b%3A0x486c012a4d9d7a45!2sSangereidlia%2078%2C%204790%20Lillesand!5e0!3m2!1sen!2sno!4v1684596718539!5m2!1sen!2sno"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </main>
 
     <!-- Footer -->
