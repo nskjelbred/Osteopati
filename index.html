@@ -15,13 +15,14 @@
 
         html, body {
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
             font-family: 'Arial', sans-serif;
         }
 
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             background-color: var(--background-color, #f5faff);
             color: var(--text-color, #03396c);
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -146,6 +147,13 @@
         }
 
         /* Section Styles */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         section {
             background-color: var(--section-background);
             padding: 20px;
@@ -184,12 +192,12 @@
         /* Contact Section */
         #contact {
             text-align: center;
-            margin-bottom: 15px; /* Added space below text */
+            margin-bottom: 15px;
         }
 
         #contact .btn {
             display: inline-block;
-            margin: 15px 10px; /* Increased spacing slightly */
+            margin: 15px 10px;
         }
 
         /* Button Styles */
@@ -223,7 +231,7 @@
 
         /* Location Section */
         #location p {
-            margin-bottom: 20px; /* Added spacing between address text and map */
+            margin-bottom: 20px;
         }
 
         /* Footer Section */
@@ -233,6 +241,7 @@
             text-align: center;
             padding: 20px;
             width: 100%;
+            margin-top: auto;
         }
 
         footer p {
