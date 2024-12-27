@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personvernerklæring</title>
+    <link rel="icon" href="logo.gif" type="image/jpeg">
+    <style>
+        /* Reusing the styles from the index page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color, #f5faff);
+            color: var(--text-color, #03396c);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        :root {
+            --background-color: #f5faff;
+            --section-background: #ffffff;
+            --text-color: #03396c;
+            --header-bg: white;
+            --button-bg: #0277bd;
+            --button-hover-bg: #01579b;
+            --divider-color: #e0e0e0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--header-bg);
+            padding: 20px 50px;
+            width: 100%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header img.logo {
+            width: 80px;
+            height: auto;
+            position: absolute;
+            left: 20px;
+        }
+
+        header h1 {
+            font-size: 2.0em;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+
+        section {
+            background-color: var(--section-background);
+            padding: 20px;
+            margin: 20px 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        section h2 {
+            color: var(--text-color);
+            font-size: 1.8em;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid var(--divider-color);
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .content-block h3 {
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .content-block p, .content-block ul {
+            margin: 0 0 10px 0;
+        }
+
+        ul.cookies-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul.cookies-list li {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            color: white;
+            background-color: var(--button-bg);
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--button-hover-bg);
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: var(--button-bg);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        a {
+            color: var(--button-bg);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo">
+        <h1>Osteopati-Skjelbred</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Personvernerklæring</h2>
+            
+            <div class="content-block">
+                <h3>Hvordan vi bruker informasjonskapsler (cookies)</h3>
+                <p>
+                    Dette nettstedet bruker informasjonskapsler for å forbedre brukeropplevelsen. Informasjonskapslene lagrer
+                    preferanser som for eksempel ditt valgte tema (lys eller mørk modus).
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h3>Hvilke typer informasjonskapsler vi bruker</h3>
+                <ul class="cookies-list">
+                    <li>
+                        <strong>Nødvendige informasjonskapsler:</strong>
+                        <p>Disse er nødvendige for at nettstedet skal fungere korrekt.</p>
+                        <p>Eksempel: Lagring av temainnstillinger.</p>
+                    </li>
+                    <li>
+                        <strong>Ikke-nødvendige informasjonskapsler:</strong>
+                        <p>Vi bruker ingen sporings- eller analyseverktøy som ikke er nødvendige.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Hvordan administrere informasjonskapsler</h3>
+                <p>
+                    Du kan når som helst deaktivere informasjonskapsler via nettleserinnstillingene dine. Vær oppmerksom på at
+                    dette kan påvirke funksjonaliteten til nettstedet.
+                </p>
+            </div>
+        </section>
+
+        <section style="text-align: center;">
+            <a href="index.html" class="btn">Tilbake til hovedsiden</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
+    </footer>
+</body>
+</html>
