@@ -38,6 +38,16 @@
             --divider-color: #e0e0e0;
         }
 
+        [data-theme="dark"] {
+            --background-color: #1a1a1a;
+            --section-background: #333333;
+            --text-color: #f5f5f5;
+            --header-bg: #333333;
+            --button-bg: #444444;
+            --button-hover-bg: #555555;
+            --divider-color: #555555;
+        }
+
         header {
             display: flex;
             align-items: center;
@@ -62,6 +72,74 @@
             text-align: center;
             margin: 0 auto;
             flex: 1;
+        }
+
+        .theme-toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .theme-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        /* Light/Dark icons on the slider */
+        .slider .icon {
+            font-size: 14px;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .slider .icon.sun {
+            margin-left: 3px;
+        }
+
+        .slider .icon.moon {
+            margin-right: 3px;
+        }
+
+        input:checked + .slider {
+            background-color: #4CAF50;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+
+        input:checked + .slider .icon {
+            color: white;
         }
 
         main {
@@ -96,7 +174,7 @@
             padding: 15px;
             border: 1px solid var(--divider-color);
             border-radius: 8px;
-            background-color: #f9f9f9;
+            background-color: var(--section-background);
         }
 
         .content-block h3 {
@@ -165,7 +243,14 @@
     <!-- Header -->
     <header>
         <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo">
-        <h1>Osteopati-Skjelbred</h1>
+        <h1>Skjelbred</h1>
+        <label class="theme-toggle">
+            <input type="checkbox" id="theme-switch">
+            <span class="slider">
+                <span class="icon sun">☀️</span>
+                <span class="icon moon">🌙</span>
+            </span>
+        </label>
     </header>
 
     <!-- Main Content -->
@@ -214,5 +299,27 @@
     <footer>
         <p>&copy; 2025 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
     </footer>
+
+    <script>
+        const themeSwitch = document.getElementById('theme-switch');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            themeSwitch.checked = true;
+        }
+
+        // Toggle theme and save preference
+        themeSwitch.addEventListener('change', () => {
+            if (themeSwitch.checked) {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 </body>
 </html>
