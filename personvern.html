@@ -56,13 +56,18 @@
             padding: 20px 50px;
             width: 100%;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header .logo-link {
+            display: block;
+            position: absolute;
+            left: 20px;
         }
 
         header img.logo {
             width: 80px;
             height: auto;
-            position: absolute;
-            left: 20px;
         }
 
         header h1 {
@@ -237,13 +242,50 @@
             color: var(--button-bg);
             text-decoration: underline;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            header img.logo {
+                width: 60px;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .btn {
+                font-size: 0.9em;
+                padding: 10px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img.logo {
+                width: 50px;
+            }
+
+            header h1 {
+                font-size: 1.3em;
+            }
+
+            .btn {
+                font-size: 0.8em;
+                padding: 8px 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo">
-        <h1>Skjelbred</h1>
+        <a href="index.html" class="logo-link">
+            <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo">
+        </a>
+        <h1>&nbsp; &nbsp; Osteopati Skjelbred</h1>
         <label class="theme-toggle">
             <input type="checkbox" id="theme-switch">
             <span class="slider">

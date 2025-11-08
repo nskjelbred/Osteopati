@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Osteopati Skjelbred</title>
-    <link rel="icon" href="logo.gif" type="image/jpeg">
+    <link rel="icon" href="logo.gif" type="image/gif"/>
     <style>
         /* Reset */
         * {
@@ -17,8 +17,6 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            margin: 0;
-            padding: 0;
             font-family: 'Arial', sans-serif;
         }
 
@@ -28,7 +26,6 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Theme Variables */
         :root {
             --background-color: #f5faff;
             --section-background: #ffffff;
@@ -51,7 +48,6 @@
             --primary-button-hover-bg: #43A047;
         }
 
-        /* Header Section */
         header {
             display: flex;
             align-items: center;
@@ -59,7 +55,7 @@
             background-color: var(--header-bg);
             padding: 20px 50px;
             width: 100%;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header img.logo {
@@ -70,15 +66,14 @@
         }
 
         header h1 {
-            font-size: 2.0em;
+            font-size: 2em;
             font-family: 'Georgia', serif;
             font-weight: bold;
-            text-align: center;
             margin: 0 auto;
             flex: 1;
+            text-align: center;
         }
 
-        /* Toggle Switch */
         .theme-toggle {
             position: relative;
             display: inline-block;
@@ -109,8 +104,8 @@
         }
 
         .slider:before {
-            position: absolute;
             content: "";
+            position: absolute;
             height: 22px;
             width: 22px;
             left: 3px;
@@ -131,7 +126,6 @@
         .slider .icon {
             font-size: 14px;
             color: #666;
-            transition: color 0.3s ease;
         }
 
         input:checked + .slider .icon {
@@ -146,7 +140,6 @@
             margin-right: 3px;
         }
 
-        /* Section Styles */
         main {
             flex: 1;
             display: flex;
@@ -159,21 +152,18 @@
             padding: 20px;
             margin: 20px 10px;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             max-width: 800px;
             width: 100%;
-            transition: background-color 0.3s ease;
         }
 
         section h2 {
-            color: var(--text-color);
             font-size: 1.8em;
-            font-family: 'Georgia', serif;
-            margin-bottom: 20px;
             text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
         }
 
-        /* Om Meg Section */
         #about {
             display: flex;
             flex-direction: column;
@@ -189,18 +179,17 @@
             line-height: 1.4;
         }
 
-        /* Contact Section */
-        #contact {
-            text-align: center;
-            margin-bottom: 15px;
+        .linkedin-logo {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
 
-        #contact .btn {
-            display: inline-block;
-            margin: 15px 10px;
+        .linkedin-link:hover .linkedin-logo {
+            transform: scale(1.1);
+            filter: brightness(1.1);
         }
 
-        /* Button Styles */
         .btn {
             display: inline-block;
             padding: 12px 20px;
@@ -214,6 +203,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease-in-out, transform 0.2s ease;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
         }
 
         .btn:hover {
@@ -228,19 +218,30 @@
         .btn.primary:hover {
             background-color: var(--primary-button-hover-bg);
         }
+        .btn.small {
+        font-size: 0.9em;
+        padding: 5px 12px;
+        background-color: var(--button-bg);
+        }
 
-        /* Location Section */
+        .btn.small:hover {
+        background-color: var(--button-hover-bg);
+        }
+
+        #contact {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
         #location p {
             margin-bottom: 20px;
         }
 
-        /* Footer Section */
         footer {
-            background: var(--button-bg);
+            background-color: var(--button-bg);
             color: white;
             text-align: center;
             padding: 20px;
-            width: 100%;
             margin-top: auto;
         }
 
@@ -253,7 +254,6 @@
             text-decoration: underline;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             header img.logo {
                 width: 60px;
@@ -265,11 +265,6 @@
 
             section h2 {
                 font-size: 1.5em;
-            }
-
-            section p {
-                font-size: 0.9em;
-                padding: 0 10px;
             }
 
             .btn {
@@ -291,148 +286,116 @@
                 font-size: 1.3em;
             }
 
-            section p {
-                font-size: 0.8em;
-                padding: 0 10px;
-            }
-
             .btn {
                 font-size: 0.8em;
                 padding: 8px 15px;
             }
         }
-        .linkedin-logo {
-        width: 20px; /* Adjusted to a smaller size */
-        height: 20px;
-        transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover animation */
-        }
-
-        .linkedin-link:hover .linkedin-logo {
-        transform: scale(1.1); /* Slight zoom effect */
-        filter: brightness(1.1); /* Subtle brightness increase */
-        }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo">
-        <h1>&nbsp; &nbsp; Osteopati Skjelbred</h1>
-        <label class="theme-toggle">
-            <input type="checkbox" id="theme-switch">
-            <span class="slider">
-                <span class="icon sun">☀️</span>
-                <span class="icon moon">🌙</span>
-            </span>
-        </label>
-    </header>
+<header>
+    <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo">
+    <h1>&nbsp; &nbsp; Osteopati Skjelbred</h1>
+    <label class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <span class="slider">
+            <span class="icon sun">☀️</span>
+            <span class="icon moon">🌙</span>
+        </span>
+    </label>
+</header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Om Meg Section -->
-        <section id="about">
-            <p><strong>Ivar Otto Skjelbred</strong></p>
-            <p>Osteopat D.O.</p>
-            <p>Spesialist i barneosteopati</p>
-            <p>Medlem av det Norske Osteopatiforbund (MNOF)</p>
-            <p>
-                <a href="https://no.linkedin.com/in/dr-ivar-skjelbred-do-20038510" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" 
-                        alt="LinkedIn Logo" class="linkedin-logo">
-                </a>
-            </p>
-        </section>
+<main>
+    <!-- Om Meg Section -->
+  <section id="about">
+    <p><strong>Ivar Otto Skjelbred</strong></p>
+    <p>Osteopat D.O.</p>
+    <p>Spesialist i barneosteopati</p>
+    <p>Medlem av det Norske Osteopatiforbund (MNOF)</p>
+    <p style="display: flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://no.linkedin.com/in/dr-ivar-skjelbred-do-20038510" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" 
+                 alt="LinkedIn Logo" class="linkedin-logo">
+        </a>
+        <a href="om-meg.html" class="btn small">Les mer om meg</a>
+    </p>
+</section>
 
-        <!-- Kontakt Oss Section -->
-        <section id="contact">
-             <h2>Kontakt</h2>
-             <p>Vi hjelper deg med å finne balansen og velvære gjennom biodynamisk osteopati.</p>
-             <a href="mailto:kontakt@osteopati-skjelbred.no" class="btn">Send E-Post</a>
-             <a href="tel:98836655" class="btn">Ring</a>
-            <!-- <a href="#" class="btn primary">Bestill Time</a> -->
-        </section>
+    <!-- Kontakt -->
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>Vi hjelper deg med å finne balansen og velvære gjennom biodynamisk osteopati.</p>
+        <a href="mailto:osteopatiskjelbred@proton.me" class="btn">Send sikker E-Post</a>
+        <a href="tel:98836655" class="btn">Ring</a>
+    </section>
 
-        <!-- Hvor Finner Du Oss Section -->
-        <section id="location">
-            <h2>Hvor finner du meg?</h2>
-            <p><strong>Adresse:</strong> Sangereidlia 78, 4790 Lillesand</p>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1958.8391826365336!2d8.377259!3d58.250129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46380a7c9b91a02b%3A0x486c012a4d9d7a45!2sSangereidlia%2078%2C%204790%20Lillesand!5e0!3m2!1sen!2sno!4v1684596718539!5m2!1sen!2sno"
-                width="100%"
-                height="400"
-                frameborder="0"
-                style="border:0"
-                allowfullscreen=""
-                aria-hidden="false"
-                tabindex="0"></iframe>
-        </section>
-    </main>
+    <!-- Hvor Finner Du Oss -->
+    <section id="location">
+        <h2>Hvor finner du meg?</h2>
+        <p><strong>Adresse:</strong> Sangereidlia 78, 4790 Lillesand</p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1958.8391826365336!2d8.377259!3d58.250129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46380a7c9b91a02b%3A0x486c012a4d9d7a45!2sSangereidlia%2078%2C%204790%20Lillesand!5e0!3m2!1sen!2sno!4v1684596718539!5m2!1sen!2sno"
+            width="100%" height="400" frameborder="0" style="border:0" allowfullscreen="" aria-hidden="false" tabindex="0">
+        </iframe>
+    </section>
+</main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
-    </footer>
-    <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; width: 100%; background-color: #03396c; color: white; text-align: center; padding: 10px; z-index: 1000;">
-        <p>
-            Dette nettstedet bruker informasjonskapsler for å lagre dine temainnstillinger. Ved å fortsette å bruke nettstedet, godtar du vår bruk av informasjonskapsler. 
-            <a href="/personvern.html" style="color: #4CAF50; text-decoration: underline;">Les mer</a>.
-            <button id="accept-cookies" style="background-color: #4CAF50; border: none; color: white; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-left: 10px;">Godta</button>
-        </p>
-    </div>
+<footer>
+    <p>&copy; 2025 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
+</footer>
 
-    <script>
-      const themeSwitch = document.getElementById('theme-switch');
+<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; width: 100%; background-color: #03396c; color: white; text-align: center; padding: 10px; z-index: 1000;">
+    <p>
+        Dette nettstedet bruker informasjonskapsler for å lagre dine temainnstillinger.
+        <a href="/personvern.html" style="color: #4CAF50; text-decoration: underline;">Les mer</a>.
+        <button id="accept-cookies" style="background-color: #4CAF50; border: none; color: white; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-left: 10px;">Godta</button>
+    </p>
+</div>
 
-// Function to set a cookie
-function setCookie(name, value, days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + date.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
+<script>
+    const themeSwitch = document.getElementById('theme-switch');
 
-// Function to get a cookie by name
-function getCookie(name) {
-    const decodedCookie = decodeURIComponent(document.cookie);
-    const cookieArray = decodedCookie.split(';');
-    for (let i = 0; i < cookieArray.length; i++) {
-        const cookie = cookieArray[i].trim();
-        if (cookie.indexOf(name + "=") == 0) {
-            return cookie.substring(name.length + 1);
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 86400000));
+        document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+    }
+
+    function getCookie(name) {
+        const cookieArr = decodeURIComponent(document.cookie).split(";");
+        for (let i = 0; i < cookieArr.length; i++) {
+            let cookie = cookieArr[i].trim();
+            if (cookie.startsWith(name + "=")) {
+                return cookie.substring(name.length + 1);
+            }
         }
-    }
-    return null;
-}
-
-// Set the initial theme based on the cookie
-const savedTheme = getCookie('theme');
-if (savedTheme === 'dark') {
-    document.body.setAttribute('data-theme', 'dark');
-    themeSwitch.checked = true;
-}
-
-// Add event listener to toggle theme and save preference in cookie
-themeSwitch.addEventListener('change', () => {
-    if (themeSwitch.checked) {
-        document.body.setAttribute('data-theme', 'dark');
-        setCookie('theme', 'dark', 30); // Save theme as 'dark' for 30 days
-    } else {
-        document.body.removeAttribute('data-theme');
-        setCookie('theme', 'light', 30); // Save theme as 'light' for 30 days
-    }
-});
-
- // Sjekk om brukeren allerede har akseptert informasjonskapsler
- if (!document.cookie.includes('cookiesAccepted=true')) {
-        document.getElementById('cookie-banner').style.display = 'block';
+        return null;
     }
 
-    // Håndter aksept av cookies
-    document.getElementById('accept-cookies').addEventListener('click', () => {
+    if (getCookie("theme") === "dark") {
+        document.body.setAttribute("data-theme", "dark");
+        themeSwitch.checked = true;
+    }
+
+    themeSwitch.addEventListener("change", () => {
+        if (themeSwitch.checked) {
+            document.body.setAttribute("data-theme", "dark");
+            setCookie("theme", "dark", 30);
+        } else {
+            document.body.removeAttribute("data-theme");
+            setCookie("theme", "light", 30);
+        }
+    });
+
+    if (!document.cookie.includes("cookiesAccepted=true")) {
+        document.getElementById("cookie-banner").style.display = "block";
+    }
+
+    document.getElementById("accept-cookies").addEventListener("click", () => {
         document.cookie = "cookiesAccepted=true; max-age=" + (60 * 60 * 24 * 365) + "; path=/";
-        document.getElementById('cookie-banner').style.display = 'none';
+        document.getElementById("cookie-banner").style.display = "none";
     });
 </script>
-    
 </body>
 </html>
