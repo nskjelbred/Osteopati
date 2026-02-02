@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personvernerklæring</title>
+  <title>Om Ivar Otto Skjelbred</title>
 
-  <meta name="description" content="Personvernerklæring for Osteopati Skjelbred – informasjon om informasjonskapsler og hvordan data håndteres." />
+  <meta name="description" content="Om Ivar Otto Skjelbred – bakgrunn, utdanning og erfaring. Norsk, engelsk og tysk." />
   <meta name="color-scheme" content="light dark" />
 
   <link rel="icon" href="logo.gif" type="image/gif" />
+  <link rel="preconnect" href="https://www.google.com" />
+  <link rel="preconnect" href="https://upload.wikimedia.org" />
 
   <style>
     /* Reset */
@@ -72,7 +74,7 @@
       min-height: 100%;
     }
 
-    /* Header (same as index/om-meg) */
+    /* Header */
     header{
       position: sticky;
       top: 0;
@@ -168,7 +170,7 @@
       padding: 18px 16px 44px;
     }
 
-    /* Card (same family as index/om-meg) */
+    /* Unified card style */
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.90));
       border: 1px solid var(--border);
@@ -216,57 +218,38 @@
       margin: 14px 0 16px;
     }
 
-    /* Content blocks (modernized) */
-    .content-block{
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.60);
-      border-radius: 14px;
-      padding: 16px;
-      box-shadow: var(--shadow-sm);
-      margin-top: 14px;
-    }
-    [data-theme="dark"] .content-block{
-      background: rgba(15,20,28,.40);
-    }
-
-    .content-block h3{
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-      color: var(--text);
-      letter-spacing: .1px;
-    }
-    .content-block p{
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    ul.cookies-list{
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0;
+    /* Section content */
+    .section-grid{
       display: grid;
       gap: 12px;
     }
-    ul.cookies-list li{
-      border: 1px dashed var(--border);
+    .flag{
+      font-size: 1.6rem;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
       border-radius: 14px;
-      padding: 12px;
-      background: rgba(255,255,255,.45);
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      box-shadow: var(--shadow-sm);
+      margin: 0 auto;
     }
-    [data-theme="dark"] ul.cookies-list li{
-      background: rgba(15,20,28,.28);
+
+    p{
+      color: var(--muted);
+      font-size: 1rem;
     }
-    ul.cookies-list strong{
+    .lead{
       color: var(--text);
+      font-weight: 700;
+      margin-top: 2px;
+      text-align: center;
     }
 
-    /* Links and button */
-    .text-link{
-      color: var(--primary);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
+    /* Buttons */
     .btn{
       display: inline-flex;
       align-items: center;
@@ -283,25 +266,39 @@
       cursor: pointer;
       box-shadow: var(--shadow-sm);
       transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
-      min-width: 220px;
+      min-width: 200px;
     }
     .btn:hover{
       background: var(--primary-hover);
       transform: translateY(-1px);
       box-shadow: var(--shadow-md);
     }
+    .btn:active{ transform: translateY(0); }
     .btn:focus-visible{
       outline: 3px solid rgba(74,163,255,.45);
       outline-offset: 3px;
+    }
+    .btn.ghost{
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: none;
+      min-width: unset;
+      padding: 10px 14px;
+    }
+    .btn.ghost:hover{
+      background: rgba(11,116,209,.08);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
     }
 
     .center-actions{
       display: flex;
       justify-content: center;
-      margin-top: 16px;
+      margin-top: 18px;
     }
 
-    /* Footer (same family) */
+    /* Footer */
     footer{
       border-top: 1px solid var(--border);
       background: rgba(255,255,255,.65);
@@ -333,7 +330,7 @@
         <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo" />
       </a>
 
-      <h1>Osteopati Skjelbred</h1>
+      <h1>Om Ivar Otto Skjelbred</h1>
 
       <label class="theme-toggle" aria-label="Bytt mellom lys og mørk modus">
         <input type="checkbox" id="theme-switch" />
@@ -348,59 +345,94 @@
   <main>
     <div class="page">
 
+      <!-- Norsk -->
       <section class="card">
         <div class="card-head">
-          <h2 class="card-title">Personvernerklæring</h2>
-          <p class="card-subtitle">Slik håndterer vi informasjonskapsler og personvern på dette nettstedet.</p>
+          <div class="flag" aria-hidden="true">🇳🇴</div>
+          <h2 class="card-title">Ivar Otto Skjelbred</h2>
+          <p class="card-subtitle">Osteopat (Noreg &amp; Sveits), Doctor of Physical Therapy (USA)</p>
         </div>
 
         <div class="divider"></div>
 
-        <div class="content-block">
-          <h3>Hvordan vi bruker informasjonskapsler (cookies)</h3>
+        <div class="section-grid">
           <p>
-            Dette nettstedet bruker informasjonskapsler for å forbedre brukeropplevelsen. Informasjonskapslene lagrer
-            preferanser som for eksempel ditt valgte tema (lys eller mørk modus).
+            Ivar Otto Skjelbred har djup fagleg forankring i manuell medisin og har teke vidareutdanning i biodynamisk osteopati i USA.
+            Ivar har studert under framståande lærarar som Dr. Viola Frymann ved Osteopathic Center for Children i San Diego – eit klinisk og
+            undervisande senter i samarbeid med Western University of Health Sciences – samt Dr. James Jealous, ein leiande autoritet innan
+            tradisjonell osteopati og “Osteopathy in the Cranial Field”.
           </p>
-        </div>
-
-        <div class="content-block">
-          <h3>Hvilke typer informasjonskapsler vi bruker</h3>
-          <ul class="cookies-list">
-            <li>
-              <strong>Nødvendige informasjonskapsler</strong>
-              <p>Disse er nødvendige for at nettstedet skal fungere korrekt.</p>
-              <p>Eksempel: Lagring av temainnstillinger.</p>
-            </li>
-            <li>
-              <strong>Ikke-nødvendige informasjonskapsler</strong>
-              <p>Vi bruker ingen sporings- eller analyseverktøy som ikke er nødvendige.</p>
-            </li>
-          </ul>
-        </div>
-
-        <div class="content-block">
-          <h3>Hvordan administrere informasjonskapsler</h3>
           <p>
-            Du kan når som helst deaktivere informasjonskapsler via nettleserinnstillingene dine. Vær oppmerksom på at
-            dette kan påvirke funksjonaliteten til nettstedet.
+            Ivar er utdanna Doctor of Physical Therapy (DPT) i USA, og autorisert osteopat D.O. i både Noreg og Sveits. Med lang klinisk
+            erfaring kombinerer Ivar eit respektfullt og lyttande møte med pasienten med djup innsikt i kroppens sjølvhelingsprosessar – i tråd
+            med dei opphavlege prinsippa i osteopatisk medisin.
           </p>
-        </div>
-
-        <div class="center-actions">
-          <a href="index.html" class="btn">&larr; Tilbake til hovedsiden</a>
         </div>
       </section>
+
+      <!-- English -->
+      <section class="card">
+        <div class="card-head">
+          <div class="flag" aria-hidden="true">🇬🇧</div>
+          <h2 class="card-title">English Version</h2>
+          <p class="card-subtitle">Doctor of Physical Therapy (USA), Osteopath D.O. (Norway &amp; Switzerland)</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section-grid">
+          <p>
+            Ivar Otto Skjelbred has a solid foundation in manual medicine and has completed advanced training in biodynamic osteopathy in the
+            United States. He studied under leading figures such as Dr. Viola Frymann at the Osteopathic Center for Children in San Diego – a
+            clinical and educational center in collaboration with Western University of Health Sciences – as well as Dr. James Jealous, a key
+            authority in traditional osteopathy and Osteopathy in the Cranial Field.
+          </p>
+          <p>
+            Ivar holds a Doctor of Physical Therapy (DPT) degree from the USA and is a licensed osteopath D.O. in both Norway and Switzerland.
+            With many years of clinical experience, Ivar combines a respectful, attentive approach with deep insight into the body’s innate
+            self-healing processes – always in line with the original principles of osteopathic medicine.
+          </p>
+        </div>
+      </section>
+
+      <!-- Deutsch -->
+      <section class="card">
+        <div class="card-head">
+          <div class="flag" aria-hidden="true">🇩🇪</div>
+          <h2 class="card-title">Dr. Ivar Otto Skjelbred, D.O., DPT</h2>
+          <p class="card-subtitle">Osteopath (Norwegen &amp; Schweiz), Doctor of Physical Therapy (USA)</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section-grid">
+          <p>
+            Skjelbred verfügt über ein fundiertes Wissen in der manuellen Medizin und hat eine spezialisierte Weiterbildung in biodynamischer
+            Osteopathie in den USA absolviert. Er wurde unter anderem von renommierten Lehrern wie Dr. Viola Frymann am Osteopathic Center for
+            Children in San Diego – einem klinischen und schulischen Zentrum in Zusammenarbeit mit der Western University of Health Sciences –
+            sowie von Dr. James Jealous, einem führenden Vertreter der traditionellen Osteopathie und Cranialen Osteopathie, unterrichtet.
+          </p>
+          <p>
+            Skjelbred hat in den USA den Abschluss Doctor of Physical Therapy (DPT) erworben und ist als Osteopath D.O. in Norwegen und der
+            Schweiz anerkannt. Mit langjähriger klinischer Erfahrung verbindet Skjelbred eine respektvolle, zugewandte Haltung mit einem tiefen
+            Verständnis für die Selbstheilungskräfte des Körpers – stets im Sinne der ursprünglichen Prinzipien der osteopathischen Medizin.
+          </p>
+        </div>
+      </section>
+
+      <div class="center-actions">
+        <a href="index.html" class="btn ghost">&larr; Tilbake til forsiden</a>
+      </div>
 
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
+    <p>&copy; 2026 — Ivar Otto Skjelbred — Alle rettigheter reservert</p>
   </footer>
 
   <script>
-    // Same theme behavior as the other pages (localStorage)
+    // Same theme behavior as index.html (localStorage)
     const themeSwitch = document.getElementById('theme-switch');
     const savedTheme = localStorage.getItem('theme');
 
