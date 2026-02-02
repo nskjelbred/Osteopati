@@ -1,401 +1,467 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Osteopati Skjelbred</title>
-    <link rel="icon" href="logo.gif" type="image/gif"/>
-    <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osteopati Skjelbred</title>
 
-        html, body {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta name="description" content="Osteopati i Lillesand. Biodynamisk osteopati og barneosteopati – behandling tilpasset deg." />
+  <meta name="color-scheme" content="light dark" />
 
-        body {
-            background-color: var(--background-color, #f5faff);
-            color: var(--text-color, #03396c);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+  <link rel="icon" href="logo.gif" type="image/gif" />
+  <link rel="preconnect" href="https://www.google.com" />
+  <link rel="preconnect" href="https://upload.wikimedia.org" />
 
-        :root {
-            --background-color: #f5faff;
-            --section-background: #ffffff;
-            --text-color: #03396c;
-            --header-bg: white;
-            --button-bg: #0277bd;
-            --button-hover-bg: #01579b;
-            --primary-button-bg: #4CAF50;
-            --primary-button-hover-bg: #43A047;
-        }
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    html, body { height: 100%; }
 
-        [data-theme="dark"] {
-            --background-color: #1a1a1a;
-            --section-background: #333333;
-            --text-color: #f5f5f5;
-            --header-bg: #333333;
-            --button-bg: #444444;
-            --button-hover-bg: #555555;
-            --primary-button-bg: #4CAF50;
-            --primary-button-hover-bg: #43A047;
-        }
+    :root{
+      --bg: #f6f9ff;
+      --surface: #ffffff;
+      --surface-2: #f2f6ff;
+      --text: #0b2b4b;
+      --muted: #4b647a;
+      --border: rgba(3,57,108,0.12);
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: var(--header-bg);
-            padding: 20px 50px;
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+      --primary: #0b74d1;
+      --primary-hover: #085ea9;
 
-        header img.logo {
-            width: 80px;
-            height: auto;
-            position: absolute;
-            left: 20px;
-        }
+      --success: #2eaa5f;
+      --success-hover: #249452;
 
-        header h1 {
-            font-size: 2em;
-            font-family: 'Georgia', serif;
-            font-weight: bold;
-            margin: 0 auto;
-            flex: 1;
-            text-align: center;
-        }
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 10px 25px rgba(0,0,0,.08);
 
-        .theme-toggle {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 30px;
-        }
+      --radius: 16px;
+      --container: 980px;
+    }
 
-        .theme-toggle input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+    [data-theme="dark"]{
+      --bg: #0f1115;
+      --surface: #161a22;
+      --surface-2: #0f141c;
+      --text: #f3f6fb;
+      --muted: #b7c3d0;
+      --border: rgba(255,255,255,0.10);
 
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: 0.4s;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5px;
-        }
+      --primary: #4aa3ff;
+      --primary-hover: #2d8ef5;
 
-        .slider:before {
-            content: "";
-            position: absolute;
-            height: 22px;
-            width: 22px;
-            left: 3px;
-            bottom: 4px;
-            background-color: white;
-            transition: 0.4s;
-            border-radius: 50%;
-        }
+      --success: #43c37a;
+      --success-hover: #2faa63;
 
-        input:checked + .slider {
-            background-color: #4CAF50;
-        }
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.25);
+      --shadow-md: 0 12px 28px rgba(0,0,0,.35);
+    }
 
-        input:checked + .slider:before {
-            transform: translateX(30px);
-        }
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(900px 500px at 20% 10%, rgba(11,116,209,.10), transparent 55%),
+                  radial-gradient(700px 450px at 80% 0%, rgba(46,170,95,.10), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      transition: background-color .25s ease, color .25s ease;
+      color-scheme: light dark;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
 
-        .slider .icon {
-            font-size: 14px;
-            color: #666;
-        }
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    [data-theme="dark"] header{
+      background: rgba(22,26,34,.70);
+    }
 
-        input:checked + .slider .icon {
-            color: white;
-        }
+    .header-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .icon.sun {
-            margin-left: 3px;
-        }
+    header img.logo{
+      width: auto;
+      height: 56px;
+      max-width: 90px;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,.08));
+    }
 
-        .icon.moon {
-            margin-right: 3px;
-        }
+    header h1{
+      font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+      margin: 0;
+      text-align: center;
+      letter-spacing: .2px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+    }
 
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    /* Theme toggle */
+    .theme-toggle{
+      position: relative;
+      display: inline-block;
+      width: 58px;
+      height: 30px;
+    }
+    .theme-toggle input{
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider{
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background-color: rgba(0,0,0,0.15);
+      border: 1px solid var(--border);
+      transition: 0.25s;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6px;
+      box-shadow: var(--shadow-sm);
+    }
+    .slider:before{
+      content: "";
+      position: absolute;
+      height: 22px;
+      width: 22px;
+      left: 3px;
+      top: 3px;
+      background-color: white;
+      transition: 0.25s;
+      border-radius: 50%;
+    }
+    input:checked + .slider{
+      background-color: rgba(46,170,95,0.30);
+    }
+    input:checked + .slider:before{
+      transform: translateX(28px);
+    }
+    .icon{ font-size: 14px; opacity: .9; }
 
-        section {
-            background-color: var(--section-background);
-            padding: 20px;
-            margin: 20px 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 800px;
-            width: 100%;
-        }
+    /* Layout */
+    main{
+      flex: 1;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .page{
+      width: 100%;
+      max-width: var(--container);
+      padding: 18px 16px 44px;
+    }
 
-        section h2 {
-            font-size: 1.8em;
-            text-align: center;
-            margin-bottom: 20px;
-            font-family: 'Georgia', serif;
-        }
+    /* Unified card style */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.90));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 22px;
+      margin: 14px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    [data-theme="dark"] .card{
+      background: linear-gradient(180deg, rgba(22,26,34,.96), rgba(22,26,34,.88));
+    }
 
-        #about {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 15px;
-            gap: 5px;
-        }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(420px 220px at 15% 10%, rgba(11,116,209,.14), transparent 60%),
+        radial-gradient(420px 220px at 85% 0%, rgba(46,170,95,.12), transparent 55%);
+      pointer-events:none;
+      opacity:.9;
+    }
 
-        #about p {
-            margin: 0;
-            font-size: 1em;
-            line-height: 1.4;
-        }
+    .card > *{ position: relative; }
 
-        .linkedin-logo {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
+    .card-head{
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .card-title{
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      letter-spacing: .2px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      margin: 0;
+    }
+    .card-subtitle{
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
 
-        .linkedin-link:hover .linkedin-logo {
-            transform: scale(1.1);
-            filter: brightness(1.1);
-        }
+    .divider{
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 14px 0 6px;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            font-size: 1em;
-            font-weight: bold;
-            color: white;
-            background-color: var(--button-bg);
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out, transform 0.2s ease;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
-        }
+    /* About content (now matches other sections) */
+    .about-lines{
+      display: grid;
+      gap: 6px;
+      justify-items: center;
+      text-align: center;
+      color: var(--muted);
+    }
+    .about-lines strong{
+      color: var(--text);
+      font-weight: 800;
+    }
 
-        .btn:hover {
-            background-color: var(--button-hover-bg);
-            transform: scale(1.05);
-        }
+    .actions-row{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
 
-        .btn.primary {
-            background-color: var(--primary-button-bg);
-        }
+    .linkedin-logo{
+      width: 22px;
+      height: 22px;
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .linkedin-link{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .linkedin-link:hover{
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    .linkedin-link:hover .linkedin-logo{
+      transform: scale(1.05);
+      filter: brightness(1.05);
+    }
+    .linkedin-link:focus-visible{
+      outline: 3px solid rgba(74,163,255,.45);
+      outline-offset: 3px;
+    }
 
-        .btn.primary:hover {
-            background-color: var(--primary-button-hover-bg);
-        }
-        .btn.small {
-        font-size: 0.9em;
-        padding: 5px 12px;
-        background-color: var(--button-bg);
-        }
+    /* Buttons */
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      font-size: 0.98rem;
+      font-weight: 750;
+      color: #fff;
+      background: var(--primary);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+      margin-top: 8px;
+      min-width: 180px;
+    }
+    .btn:hover{
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn:active{ transform: translateY(0); }
+    .btn:focus-visible{
+      outline: 3px solid rgba(74,163,255,.45);
+      outline-offset: 3px;
+    }
+    .btn.primary{ background: var(--success); }
+    .btn.primary:hover{ background: var(--success-hover); }
+    .btn.small{
+      min-width: unset;
+      font-size: 0.92rem;
+      padding: 9px 12px;
+      border-radius: 12px;
+      margin-top: 0;
+    }
 
-        .btn.small:hover {
-        background-color: var(--button-hover-bg);
-        }
+    .button-row{
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
 
-        #contact {
-            text-align: center;
-            margin-bottom: 15px;
-        }
+    /* Location */
+    .address{
+      text-align: center;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .map-frame{
+      width: 100%;
+      height: 400px;
+      border: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-top: 14px;
+    }
 
-        #location p {
-            margin-bottom: 20px;
-        }
+    /* Footer */
+    footer{
+      border-top: 1px solid var(--border);
+      background: rgba(255,255,255,.65);
+      backdrop-filter: blur(10px);
+      color: var(--muted);
+      text-align: center;
+      padding: 18px 12px;
+    }
+    [data-theme="dark"] footer{
+      background: rgba(22,26,34,.62);
+    }
+    footer p{ font-size: 0.95rem; }
 
-        footer {
-            background-color: var(--button-bg);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: auto;
-        }
+    @media (max-width: 520px){
+      header img.logo{ height: 48px; max-width: 80px; }
+      .map-frame{ height: 320px; }
+      .btn{ min-width: 160px; }
+    }
 
-        footer p {
-            font-size: 0.9em;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            header img.logo {
-                width: 60px;
-            }
-
-            header h1 {
-                font-size: 1.6em;
-            }
-
-            section h2 {
-                font-size: 1.5em;
-            }
-
-            .btn {
-                font-size: 0.9em;
-                padding: 10px 18px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header img.logo {
-                width: 50px;
-            }
-
-            header h1 {
-                font-size: 1.4em;
-            }
-
-            section h2 {
-                font-size: 1.3em;
-            }
-
-            .btn {
-                font-size: 0.8em;
-                padding: 8px 15px;
-            }
-        }
-    </style>
+    @media (prefers-reduced-motion: reduce){
+      *{ transition: none !important; }
+    }
+  </style>
 </head>
+
 <body>
-<header>
-    <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo">
-    <h1>&nbsp; &nbsp; Osteopati Skjelbred</h1>
-    <label class="theme-toggle">
-        <input type="checkbox" id="theme-switch">
-        <span class="slider">
-            <span class="icon sun">☀️</span>
-            <span class="icon moon">🌙</span>
+  <header>
+    <div class="header-inner">
+      <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo" />
+      <h1>Osteopati Skjelbred</h1>
+
+      <label class="theme-toggle" aria-label="Bytt mellom lys og mørk modus">
+        <input type="checkbox" id="theme-switch" />
+        <span class="slider" aria-hidden="true">
+          <span class="icon">☀️</span>
+          <span class="icon">🌙</span>
         </span>
-    </label>
-</header>
+      </label>
+    </div>
+  </header>
 
-<main>
-    <!-- Om Meg Section -->
-  <section id="about">
-    <p><strong>Ivar Otto Skjelbred</strong></p>
-    <p>Osteopat D.O.</p>
-    <p>Spesialist i barneosteopati</p>
-    <p>Medlem av det Norske Osteopatiforbund (MNOF)</p>
-    <p style="display: flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap;">
-        <a href="https://no.linkedin.com/in/dr-ivar-skjelbred-do-20038510" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" 
-                 alt="LinkedIn Logo" class="linkedin-logo">
-        </a>
-        <a href="om-meg.html" class="btn small">Les mer om meg</a>
-    </p>
-</section>
+  <main>
+    <div class="page">
 
-    <!-- Kontakt -->
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <p>Vi hjelper deg med å finne balansen og velvære gjennom biodynamisk osteopati.</p>
-        <a href="mailto:osteopatiskjelbred@proton.me" class="btn">Send sikker E-Post</a>
-        <a href="tel:98836655" class="btn">Ring</a>
-    </section>
+      <!-- Name/About (now styled like the other sections) -->
+      <section id="about" class="card">
+        <div class="card-head">
+          <h2 class="card-title">Ivar Otto Skjelbred</h2>
+          <p class="card-subtitle">Osteopat D.O. • Spesialist i barneosteopati</p>
+        </div>
 
-    <!-- Hvor Finner Du Oss -->
-    <section id="location">
-        <h2>Hvor finner du meg?</h2>
-        <p><strong>Adresse:</strong> Sangereidlia 78, 4790 Lillesand</p>
+        <div class="divider"></div>
+
+        <div class="about-lines">
+          <p>Medlem av det Norske Osteopatiforbund (MNOF)</p>
+        </div>
+
+        <div class="actions-row">
+          <a href="https://no.linkedin.com/in/dr-ivar-skjelbred-do-20038510"
+             target="_blank" rel="noopener noreferrer"
+             class="linkedin-link" aria-label="LinkedIn-profil">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                 alt="" class="linkedin-logo" />
+          </a>
+          <a href="om-meg.html" class="btn small">Les mer om meg</a>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="card">
+        <div class="card-head">
+          <h2 class="card-title">Kontakt</h2>
+          <p class="card-subtitle">Finn balansen og velvære gjennom biodynamisk osteopati.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="button-row">
+          <a href="mailto:osteopatiskjelbred@proton.me" class="btn primary">Send sikker e-post</a>
+          <a href="tel:98836655" class="btn">Ring</a>
+        </div>
+      </section>
+
+      <!-- Location -->
+      <section id="location" class="card">
+        <div class="card-head">
+          <h2 class="card-title">Hvor finner du meg?</h2>
+          <p class="card-subtitle">Sangereidlia 78, 4790 Lillesand</p>
+        </div>
+
+        <div class="divider"></div>
+
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1958.8391826365336!2d8.377259!3d58.250129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46380a7c9b91a02b%3A0x486c012a4d9d7a45!2sSangereidlia%2078%2C%204790%20Lillesand!5e0!3m2!1sen!2sno!4v1684596718539!5m2!1sen!2sno"
-            width="100%" height="400" frameborder="0" style="border:0" allowfullscreen="" aria-hidden="false" tabindex="0">
+          class="map-frame"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1958.8391826365336!2d8.377259!3d58.250129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46380a7c9b91a02b%3A0x486c012a4d9d7a45!2sSangereidlia%2078%2C%204790%20Lillesand!5e0!3m2!1sen!2sno!4v1684596718539!5m2!1sen!2sno"
+          allowfullscreen=""
+          aria-label="Kart til Sangereidlia 78, 4790 Lillesand">
         </iframe>
-    </section>
-</main>
+      </section>
 
-<footer>
+    </div>
+  </main>
+
+  <footer>
     <p>&copy; 2026 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
-</footer>
+  </footer>
 
-<div id="cookie-banner" style="display: none; position: fixed; bottom: 0; width: 100%; background-color: #03396c; color: white; text-align: center; padding: 10px; z-index: 1000;">
-    <p>
-        Dette nettstedet bruker informasjonskapsler for å lagre dine temainnstillinger.
-        <a href="/personvern.html" style="color: #4CAF50; text-decoration: underline;">Les mer</a>.
-        <button id="accept-cookies" style="background-color: #4CAF50; border: none; color: white; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-left: 10px;">Godta</button>
-    </p>
-</div>
-
-<script>
+  <script>
     const themeSwitch = document.getElementById('theme-switch');
+    const savedTheme = localStorage.getItem('theme');
 
-    function setCookie(name, value, days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 86400000));
-        document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+    if (savedTheme === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      themeSwitch.checked = true;
     }
 
-    function getCookie(name) {
-        const cookieArr = decodeURIComponent(document.cookie).split(";");
-        for (let i = 0; i < cookieArr.length; i++) {
-            let cookie = cookieArr[i].trim();
-            if (cookie.startsWith(name + "=")) {
-                return cookie.substring(name.length + 1);
-            }
-        }
-        return null;
-    }
-
-    if (getCookie("theme") === "dark") {
-        document.body.setAttribute("data-theme", "dark");
-        themeSwitch.checked = true;
-    }
-
-    themeSwitch.addEventListener("change", () => {
-        if (themeSwitch.checked) {
-            document.body.setAttribute("data-theme", "dark");
-            setCookie("theme", "dark", 30);
-        } else {
-            document.body.removeAttribute("data-theme");
-            setCookie("theme", "light", 30);
-        }
+    themeSwitch.addEventListener('change', () => {
+      const mode = themeSwitch.checked ? 'dark' : 'light';
+      if (mode === 'dark') document.body.setAttribute('data-theme', 'dark');
+      else document.body.removeAttribute('data-theme');
+      localStorage.setItem('theme', mode);
     });
-
-    if (!document.cookie.includes("cookiesAccepted=true")) {
-        document.getElementById("cookie-banner").style.display = "block";
-    }
-
-    document.getElementById("accept-cookies").addEventListener("click", () => {
-        document.cookie = "cookiesAccepted=true; max-age=" + (60 * 60 * 24 * 365) + "; path=/";
-        document.getElementById("cookie-banner").style.display = "none";
-    });
-</script>
+  </script>
 </body>
 </html>
