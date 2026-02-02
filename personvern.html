@@ -1,367 +1,420 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personvernerklæring</title>
-    <link rel="icon" href="logo.gif" type="image/jpeg">
-    <style>
-        /* Reusing the styles from the index page */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personvernerklæring</title>
 
-        html, body {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta name="description" content="Personvernerklæring for Osteopati Skjelbred – informasjon om informasjonskapsler og hvordan data håndteres." />
+  <meta name="color-scheme" content="light dark" />
 
-        body {
-            background-color: var(--background-color, #f5faff);
-            color: var(--text-color, #03396c);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+  <link rel="icon" href="logo.gif" type="image/gif" />
 
-        :root {
-            --background-color: #f5faff;
-            --section-background: #ffffff;
-            --text-color: #03396c;
-            --header-bg: white;
-            --button-bg: #0277bd;
-            --button-hover-bg: #01579b;
-            --divider-color: #e0e0e0;
-        }
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    html, body { height: 100%; }
 
-        [data-theme="dark"] {
-            --background-color: #1a1a1a;
-            --section-background: #333333;
-            --text-color: #f5f5f5;
-            --header-bg: #333333;
-            --button-bg: #444444;
-            --button-hover-bg: #555555;
-            --divider-color: #555555;
-        }
+    :root{
+      --bg: #f6f9ff;
+      --surface: #ffffff;
+      --surface-2: #f2f6ff;
+      --text: #0b2b4b;
+      --muted: #4b647a;
+      --border: rgba(3,57,108,0.12);
 
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: var(--header-bg);
-            padding: 20px 50px;
-            width: 100%;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
+      --primary: #0b74d1;
+      --primary-hover: #085ea9;
 
-        header .logo-link {
-            display: block;
-            position: absolute;
-            left: 20px;
-        }
+      --success: #2eaa5f;
+      --success-hover: #249452;
 
-        header img.logo {
-            width: 80px;
-            height: auto;
-        }
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 10px 25px rgba(0,0,0,.08);
 
-        header h1 {
-            font-size: 2.0em;
-            font-family: 'Georgia', serif;
-            font-weight: bold;
-            text-align: center;
-            margin: 0 auto;
-            flex: 1;
-        }
+      --radius: 16px;
+      --container: 980px;
+    }
 
-        .theme-toggle {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 30px;
-        }
+    [data-theme="dark"]{
+      --bg: #0f1115;
+      --surface: #161a22;
+      --surface-2: #0f141c;
+      --text: #f3f6fb;
+      --muted: #b7c3d0;
+      --border: rgba(255,255,255,0.10);
 
-        .theme-toggle input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+      --primary: #4aa3ff;
+      --primary-hover: #2d8ef5;
 
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: 0.4s;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5px;
-        }
+      --success: #43c37a;
+      --success-hover: #2faa63;
 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 22px;
-            width: 22px;
-            left: 3px;
-            bottom: 4px;
-            background-color: white;
-            transition: 0.4s;
-            border-radius: 50%;
-        }
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.25);
+      --shadow-md: 0 12px 28px rgba(0,0,0,.35);
+    }
 
-        /* Light/Dark icons on the slider */
-        .slider .icon {
-            font-size: 14px;
-            color: #666;
-            transition: color 0.3s ease;
-        }
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(900px 500px at 20% 10%, rgba(11,116,209,.10), transparent 55%),
+                  radial-gradient(700px 450px at 80% 0%, rgba(46,170,95,.10), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      transition: background-color .25s ease, color .25s ease;
+      color-scheme: light dark;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
 
-        .slider .icon.sun {
-            margin-left: 3px;
-        }
+    /* Header (same as index/om-meg) */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    [data-theme="dark"] header{
+      background: rgba(22,26,34,.70);
+    }
 
-        .slider .icon.moon {
-            margin-right: 3px;
-        }
+    .header-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
 
-        input:checked + .slider {
-            background-color: #4CAF50;
-        }
+    header img.logo{
+      width: auto;
+      height: 56px;
+      max-width: 90px;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,.08));
+    }
 
-        input:checked + .slider:before {
-            transform: translateX(30px);
-        }
+    header h1{
+      font-size: clamp(1.05rem, 2.5vw, 1.55rem);
+      margin: 0;
+      text-align: center;
+      letter-spacing: .2px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+    }
 
-        input:checked + .slider .icon {
-            color: white;
-        }
+    /* Theme toggle */
+    .theme-toggle{
+      position: relative;
+      display: inline-block;
+      width: 58px;
+      height: 30px;
+    }
+    .theme-toggle input{
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider{
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background-color: rgba(0,0,0,0.15);
+      border: 1px solid var(--border);
+      transition: 0.25s;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6px;
+      box-shadow: var(--shadow-sm);
+    }
+    .slider:before{
+      content: "";
+      position: absolute;
+      height: 22px;
+      width: 22px;
+      left: 3px;
+      top: 3px;
+      background-color: white;
+      transition: 0.25s;
+      border-radius: 50%;
+    }
+    input:checked + .slider{
+      background-color: rgba(46,170,95,0.30);
+    }
+    input:checked + .slider:before{
+      transform: translateX(28px);
+    }
+    .icon{ font-size: 14px; opacity: .9; }
 
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 20px;
-        }
+    /* Layout */
+    main{
+      flex: 1;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .page{
+      width: 100%;
+      max-width: var(--container);
+      padding: 18px 16px 44px;
+    }
 
-        section {
-            background-color: var(--section-background);
-            padding: 20px;
-            margin: 20px 10px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            width: 100%;
-        }
+    /* Card (same family as index/om-meg) */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.90));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 22px;
+      margin: 14px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    [data-theme="dark"] .card{
+      background: linear-gradient(180deg, rgba(22,26,34,.96), rgba(22,26,34,.88));
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(420px 220px at 15% 10%, rgba(11,116,209,.14), transparent 60%),
+        radial-gradient(420px 220px at 85% 0%, rgba(46,170,95,.12), transparent 55%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .card > *{ position: relative; }
 
-        section h2 {
-            color: var(--text-color);
-            font-size: 1.8em;
-            font-family: 'Georgia', serif;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .card-head{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .card-title{
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      letter-spacing: .2px;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      margin: 0;
+    }
+    .card-subtitle{
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
 
-        .content-block {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid var(--divider-color);
-            border-radius: 8px;
-            background-color: var(--section-background);
-        }
+    .divider{
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 14px 0 16px;
+    }
 
-        .content-block h3 {
-            margin-bottom: 10px;
-            color: var(--text-color);
-        }
+    /* Content blocks (modernized) */
+    .content-block{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.60);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      margin-top: 14px;
+    }
+    [data-theme="dark"] .content-block{
+      background: rgba(15,20,28,.40);
+    }
 
-        .content-block p, .content-block ul {
-            margin: 0 0 10px 0;
-        }
+    .content-block h3{
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--text);
+      letter-spacing: .1px;
+    }
+    .content-block p{
+      color: var(--muted);
+      margin-top: 8px;
+    }
 
-        ul.cookies-list {
-            list-style-type: none;
-            padding: 0;
-        }
+    ul.cookies-list{
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+    ul.cookies-list li{
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      background: rgba(255,255,255,.45);
+    }
+    [data-theme="dark"] ul.cookies-list li{
+      background: rgba(15,20,28,.28);
+    }
+    ul.cookies-list strong{
+      color: var(--text);
+    }
 
-        ul.cookies-list li {
-            margin-bottom: 10px;
-        }
+    /* Links and button */
+    .text-link{
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            font-size: 1em;
-            font-weight: bold;
-            color: white;
-            background-color: var(--button-bg);
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out, transform 0.2s ease;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      font-size: 0.98rem;
+      font-weight: 750;
+      color: #fff;
+      background: var(--primary);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+      min-width: 220px;
+    }
+    .btn:hover{
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn:focus-visible{
+      outline: 3px solid rgba(74,163,255,.45);
+      outline-offset: 3px;
+    }
 
-        .btn:hover {
-            background-color: var(--button-hover-bg);
-            transform: scale(1.05);
-        }
+    .center-actions{
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+    }
 
-        footer {
-            background: var(--button-bg);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            width: 100%;
-            margin-top: auto;
-        }
+    /* Footer (same family) */
+    footer{
+      border-top: 1px solid var(--border);
+      background: rgba(255,255,255,.65);
+      backdrop-filter: blur(10px);
+      color: var(--muted);
+      text-align: center;
+      padding: 18px 12px;
+    }
+    [data-theme="dark"] footer{
+      background: rgba(22,26,34,.62);
+    }
+    footer p{ font-size: 0.95rem; }
 
-        footer p {
-            font-size: 0.9em;
-        }
+    @media (max-width: 520px){
+      header img.logo{ height: 48px; max-width: 80px; }
+      .btn{ min-width: 100%; }
+    }
 
-        footer a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        a {
-            color: var(--button-bg);
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                padding: 10px 20px;
-            }
-
-            header img.logo {
-                width: 60px;
-            }
-
-            header h1 {
-                font-size: 1.5em;
-            }
-
-            .btn {
-                font-size: 0.9em;
-                padding: 10px 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header img.logo {
-                width: 50px;
-            }
-
-            header h1 {
-                font-size: 1.3em;
-            }
-
-            .btn {
-                font-size: 0.8em;
-                padding: 8px 10px;
-            }
-        }
-    </style>
+    @media (prefers-reduced-motion: reduce){
+      *{ transition: none !important; }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <a href="index.html" class="logo-link">
-            <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo">
-        </a>
-        <h1>&nbsp; &nbsp; Osteopati Skjelbred</h1>
-        <label class="theme-toggle">
-            <input type="checkbox" id="theme-switch">
-            <span class="slider">
-                <span class="icon sun">☀️</span>
-                <span class="icon moon">🌙</span>
-            </span>
-        </label>
-    </header>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" aria-label="Til forsiden">
+        <img src="logo.gif" alt="Osteopati Skjelbred Logo" class="logo" />
+      </a>
 
-    <!-- Main Content -->
-    <main>
-        <section>
-            <h2>Personvernerklæring</h2>
-            
-            <div class="content-block">
-                <h3>Hvordan vi bruker informasjonskapsler (cookies)</h3>
-                <p>
-                    Dette nettstedet bruker informasjonskapsler for å forbedre brukeropplevelsen. Informasjonskapslene lagrer
-                    preferanser som for eksempel ditt valgte tema (lys eller mørk modus).
-                </p>
-            </div>
+      <h1>Osteopati Skjelbred</h1>
 
-            <div class="content-block">
-                <h3>Hvilke typer informasjonskapsler vi bruker</h3>
-                <ul class="cookies-list">
-                    <li>
-                        <strong>Nødvendige informasjonskapsler:</strong>
-                        <p>Disse er nødvendige for at nettstedet skal fungere korrekt.</p>
-                        <p>Eksempel: Lagring av temainnstillinger.</p>
-                    </li>
-                    <li>
-                        <strong>Ikke-nødvendige informasjonskapsler:</strong>
-                        <p>Vi bruker ingen sporings- eller analyseverktøy som ikke er nødvendige.</p>
-                    </li>
-                </ul>
-            </div>
+      <label class="theme-toggle" aria-label="Bytt mellom lys og mørk modus">
+        <input type="checkbox" id="theme-switch" />
+        <span class="slider" aria-hidden="true">
+          <span class="icon">☀️</span>
+          <span class="icon">🌙</span>
+        </span>
+      </label>
+    </div>
+  </header>
 
-            <div class="content-block">
-                <h3>Hvordan administrere informasjonskapsler</h3>
-                <p>
-                    Du kan når som helst deaktivere informasjonskapsler via nettleserinnstillingene dine. Vær oppmerksom på at
-                    dette kan påvirke funksjonaliteten til nettstedet.
-                </p>
-            </div>
-        </section>
+  <main>
+    <div class="page">
 
-        <section style="text-align: center;">
-            <a href="index.html" class="btn">Tilbake til hovedsiden</a>
-        </section>
-    </main>
+      <section class="card">
+        <div class="card-head">
+          <h2 class="card-title">Personvernerklæring</h2>
+          <p class="card-subtitle">Slik håndterer vi informasjonskapsler og personvern på dette nettstedet.</p>
+        </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
-    </footer>
+        <div class="divider"></div>
 
-    <script>
-        const themeSwitch = document.getElementById('theme-switch');
+        <div class="content-block">
+          <h3>Hvordan vi bruker informasjonskapsler (cookies)</h3>
+          <p>
+            Dette nettstedet bruker informasjonskapsler for å forbedre brukeropplevelsen. Informasjonskapslene lagrer
+            preferanser som for eksempel ditt valgte tema (lys eller mørk modus).
+          </p>
+        </div>
 
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.body.setAttribute('data-theme', 'dark');
-            themeSwitch.checked = true;
-        }
+        <div class="content-block">
+          <h3>Hvilke typer informasjonskapsler vi bruker</h3>
+          <ul class="cookies-list">
+            <li>
+              <strong>Nødvendige informasjonskapsler</strong>
+              <p>Disse er nødvendige for at nettstedet skal fungere korrekt.</p>
+              <p>Eksempel: Lagring av temainnstillinger.</p>
+            </li>
+            <li>
+              <strong>Ikke-nødvendige informasjonskapsler</strong>
+              <p>Vi bruker ingen sporings- eller analyseverktøy som ikke er nødvendige.</p>
+            </li>
+          </ul>
+        </div>
 
-        // Toggle theme and save preference
-        themeSwitch.addEventListener('change', () => {
-            if (themeSwitch.checked) {
-                document.body.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.body.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    </script>
+        <div class="content-block">
+          <h3>Hvordan administrere informasjonskapsler</h3>
+          <p>
+            Du kan når som helst deaktivere informasjonskapsler via nettleserinnstillingene dine. Vær oppmerksom på at
+            dette kan påvirke funksjonaliteten til nettstedet.
+          </p>
+        </div>
+
+        <div class="center-actions">
+          <a href="index.html" class="btn">&larr; Tilbake til hovedsiden</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 — Ivar Otto Skjelbred — Alle rettigheter reservert — Org 929240839</p>
+  </footer>
+
+  <script>
+    // Same theme behavior as the other pages (localStorage)
+    const themeSwitch = document.getElementById('theme-switch');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      themeSwitch.checked = true;
+    }
+
+    themeSwitch.addEventListener('change', () => {
+      const mode = themeSwitch.checked ? 'dark' : 'light';
+      if (mode === 'dark') document.body.setAttribute('data-theme', 'dark');
+      else document.body.removeAttribute('data-theme');
+      localStorage.setItem('theme', mode);
+    });
+  </script>
 </body>
 </html>
