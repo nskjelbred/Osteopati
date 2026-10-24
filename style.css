@@ -408,12 +408,12 @@ section[id] { scroll-margin-top: calc(var(--menu-h) + 16px); }
   display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center;
   margin-top: 20px;
 }
-.monogram {
-  width: 96px; height: 96px; border-radius: 50%;
-  display: grid; place-items: center;
-  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--rose)));
-  color: var(--bg);
-  font-family: var(--serif); font-size: 2rem; font-weight: 600;
+.portrait {
+  width: 104px; height: 104px; border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--border), var(--shadow-md);
+  background: var(--surface-2);
 }
 .about h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; }
 .about .role { color: var(--accent); font-weight: 650; margin-bottom: 14px; }
@@ -464,10 +464,19 @@ section[id] { scroll-margin-top: calc(var(--menu-h) + 16px); }
 }
 @media (max-width: 520px) {
   .about { grid-template-columns: 1fr; }
-  .monogram { width: 72px; height: 72px; font-size: 1.5rem; }
+  .portrait { width: 84px; height: 84px; }
 }
 
 /* === Om meg === */
+.profile {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: clamp(20px, 4vw, 40px); align-items: center;
+}
+.portrait-lg { width: 176px; height: 176px; border-width: 4px; }
+@media (max-width: 600px) {
+  .profile { grid-template-columns: 1fr; }
+  .portrait-lg { width: 128px; height: 128px; }
+}
 .credentials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .chip {
   display: inline-flex; align-items: center; gap: 8px;

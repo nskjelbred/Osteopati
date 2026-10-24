@@ -28,6 +28,7 @@ window.I18N = {
     'back': '&larr; Back to the front page',
     'service.biodynamic': 'Biodynamic osteopathy',
     'service.children': 'Paediatric osteopathy',
+    'portrait.alt': 'Portrait of Ivar Otto Skjelbred',
 
     // Front page
     'index.title': 'Osteopati Skjelbred – Biodynamic osteopathy in Lillesand, Norway',
@@ -98,6 +99,7 @@ window.I18N = {
     'back': '&larr; Zurück zur Startseite',
     'service.biodynamic': 'Biodynamische Osteopathie',
     'service.children': 'Kinderosteopathie',
+    'portrait.alt': 'Porträt von Ivar Otto Skjelbred',
 
     // Front page
     'index.title': 'Osteopati Skjelbred – Biodynamische Osteopathie in Lillesand, Norwegen',
