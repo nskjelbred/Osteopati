@@ -3,40 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Om meg – Ivar Otto Skjelbred | Osteopati Skjelbred</title>
+  <title data-i18n="about.title">Om meg – Ivar Otto Skjelbred | Osteopati Skjelbred</title>
 
-  <meta name="description" content="Om Ivar Otto Skjelbred – bakgrunn, utdanning og erfaring. Norsk, engelsk og tysk." />
+  <meta name="description" content="Om Ivar Otto Skjelbred – bakgrunn, utdanning og erfaring." data-i18n-attr="content:about.description" />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#f7f3ec" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#12161b" media="(prefers-color-scheme: dark)" />
 
+  <link rel="alternate" hreflang="nn" href="https://osteopatiskjelbred.no/om-meg.html" />
+  <link rel="alternate" hreflang="en" href="https://osteopatiskjelbred.no/om-meg.html?lang=en" />
+  <link rel="alternate" hreflang="de" href="https://osteopatiskjelbred.no/om-meg.html?lang=de" />
+  <link rel="alternate" hreflang="x-default" href="https://osteopatiskjelbred.no/om-meg.html" />
+
   <link rel="icon" href="logo.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="stylesheet" href="style.css" />
-  <script>try{const t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+  <script>
+    // Theme and language are decided before the page is drawn; site.js does the rest.
+    (function (d) {
+      var L = ['nn', 'en', 'de'], l = null, s = null, t = null;
+      try { t = localStorage.getItem('theme'); s = localStorage.getItem('lang'); } catch (e) {}
+      if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t);
+      try { l = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+      if (L.indexOf(l) < 0) l = L.indexOf(s) < 0 ? null : s;
+      if (!l) {
+        // Norwegian is the default; only German browsers switch automatically.
+        var n = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''])
+          .map(function (x) { return String(x).slice(0, 2).toLowerCase(); });
+        var no = n.some(function (c) { return c === 'nb' || c === 'nn' || c === 'no'; });
+        l = !no && n.indexOf('de') >= 0 ? 'de' : 'nn';
+      }
+      d.setAttribute('data-lang', l);
+      if (l !== 'nn') {
+        d.lang = l;
+        d.classList.add('i18n-wait');
+        setTimeout(function () { d.classList.remove('i18n-wait'); }, 2500);
+      }
+    })(document.documentElement);
+  </script>
+  <script src="i18n.js" defer></script>
   <script src="site.js" defer></script>
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Hopp til innhald</a>
+  <a class="skip-link" href="#main-content" data-i18n="skip">Hopp til innhald</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Til framsida – Osteopati Skjelbred">
+      <a class="brand" href="index.html" aria-label="Til framsida – Osteopati Skjelbred" data-i18n-attr="aria-label:brand.home">
         <span class="logo-tile"><img src="logo.svg" alt="" width="58" height="40" /></span>
         <span class="brand-text">
           <span class="brand-name">Osteopati Skjelbred</span>
-          <span class="brand-tagline">Biodynamisk osteopati · Barneosteopati</span>
+          <span class="brand-tagline" data-i18n="brand.tagline">Biodynamisk osteopati · Barneosteopati</span>
         </span>
       </a>
 
-      <nav class="nav" id="nav" aria-label="Hovudmeny">
-        <a href="index.html#behandling">Behandling</a>
-        <a href="om-meg.html" aria-current="page">Om meg</a>
-        <a href="index.html#kontakt">Kontakt</a>
+      <nav class="nav" id="nav" aria-label="Hovudmeny" data-i18n-attr="aria-label:nav.label">
+        <a href="index.html#behandling" data-i18n="nav.treatment">Behandling</a>
+        <a href="om-meg.html" aria-current="page" data-i18n="nav.about">Om meg</a>
+        <a href="index.html#kontakt" data-i18n="nav.contact">Kontakt</a>
       </nav>
 
-      <button class="theme-btn" id="theme-btn" type="button" aria-label="Byt mellom lys og mørk modus">
+      <div class="lang-switch">
+        <button class="lang-btn" id="lang-btn" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="Vel språk" data-i18n-attr="aria-label:lang.choose">
+          <span class="flag flag-nn" aria-hidden="true"></span>
+          <span class="lang-code">NO</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <ul class="lang-menu" id="lang-menu" hidden>
+          <li><a href="?lang=nn" hreflang="nn" lang="nn" data-set-lang="nn"><span class="flag flag-nn" aria-hidden="true"></span>Norsk</a></li>
+          <li><a href="?lang=en" hreflang="en" lang="en" data-set-lang="en"><span class="flag flag-en" aria-hidden="true"></span>English</a></li>
+          <li><a href="?lang=de" hreflang="de" lang="de" data-set-lang="de"><span class="flag flag-de" aria-hidden="true"></span>Deutsch</a></li>
+        </ul>
+      </div>
+
+      <button class="theme-btn" id="theme-btn" type="button" aria-label="Byt mellom lys og mørk modus" data-i18n-attr="aria-label:theme.toggle">
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
@@ -51,13 +92,13 @@
 
     <section class="page-hero">
       <div class="container narrow">
-        <span class="eyebrow">Om meg</span>
+        <span class="eyebrow" data-i18n="nav.about">Om meg</span>
         <h1>Ivar Otto Skjelbred</h1>
-        <p class="lead">Osteopat D.O. i Noreg og Sveits, og Doctor of Physical Therapy frå USA.</p>
+        <p class="lead" data-i18n="about.lead">Osteopat D.O. i Noreg og Sveits, og Doctor of Physical Therapy frå USA.</p>
         <div class="credentials">
-          <span class="chip">Osteopat D.O. (Noreg &amp; Sveits)</span>
+          <span class="chip" data-i18n="about.chipDO">Osteopat D.O. (Noreg &amp; Sveits)</span>
           <span class="chip">Doctor of Physical Therapy (USA)</span>
-          <span class="chip">Biodynamisk osteopati</span>
+          <span class="chip" data-i18n="service.biodynamic">Biodynamisk osteopati</span>
         </div>
       </div>
     </section>
@@ -65,13 +106,7 @@
     <section class="section" style="padding-top: 12px;">
       <div class="container narrow">
 
-        <div class="lang-tabs" role="tablist" aria-label="Vel språk">
-          <button type="button" role="tab" id="tab-nn" aria-controls="panel-nn" aria-selected="true" data-lang="nn">Norsk</button>
-          <button type="button" role="tab" id="tab-en" aria-controls="panel-en" aria-selected="false" data-lang="en">English</button>
-          <button type="button" role="tab" id="tab-de" aria-controls="panel-de" aria-selected="false" data-lang="de">Deutsch</button>
-        </div>
-
-        <article class="card prose lang-panel" id="panel-nn" role="tabpanel" aria-labelledby="tab-nn" lang="nn">
+        <article class="card prose lang-panel" data-lang-panel="nn" lang="nn">
           <div>
             <h2>Bakgrunn og utdanning</h2>
             <p class="sub">Osteopat (Noreg &amp; Sveits), Doctor of Physical Therapy (USA)</p>
@@ -89,7 +124,7 @@
           </p>
         </article>
 
-        <article class="card prose lang-panel" id="panel-en" role="tabpanel" aria-labelledby="tab-en" lang="en" hidden>
+        <article class="card prose lang-panel" data-lang-panel="en" lang="en">
           <div>
             <h2>Background and education</h2>
             <p class="sub">Doctor of Physical Therapy (USA), Osteopath D.O. (Norway &amp; Switzerland)</p>
@@ -107,7 +142,7 @@
           </p>
         </article>
 
-        <article class="card prose lang-panel" id="panel-de" role="tabpanel" aria-labelledby="tab-de" lang="de" hidden>
+        <article class="card prose lang-panel" data-lang-panel="de" lang="de">
           <div>
             <h2>Dr. Ivar Otto Skjelbred, D.O., DPT</h2>
             <p class="sub">Osteopath (Norwegen &amp; Schweiz), Doctor of Physical Therapy (USA)</p>
@@ -127,16 +162,16 @@
 
         <div class="card cta-card">
           <div>
-            <h2>Vil du bestille time?</h2>
-            <p>Ta kontakt på e-post eller telefon.</p>
+            <h2 data-i18n="about.ctaTitle">Vil du bestille time?</h2>
+            <p data-i18n="about.ctaText">Ta kontakt på e-post eller telefon.</p>
           </div>
           <div class="inline-actions">
-            <a href="mailto:osteopatiskjelbred@proton.me" class="btn btn-primary btn-sm">Send e-post</a>
-            <a href="tel:+4798836655" class="btn btn-ghost btn-sm">98 83 66 55</a>
+            <a href="mailto:osteopatiskjelbred@proton.me" class="btn btn-primary btn-sm" data-i18n="cta.email">Send e-post</a>
+            <a href="tel:+4798836655" class="btn btn-ghost btn-sm" data-i18n="phone">98 83 66 55</a>
           </div>
         </div>
 
-        <a href="index.html" class="back-link">&larr; Attende til framsida</a>
+        <a href="index.html" class="back-link" data-i18n="back">&larr; Attende til framsida</a>
       </div>
     </section>
 
@@ -144,10 +179,10 @@
 
   <footer>
     <div class="container footer-inner">
-      <p>&copy; 2026 Ivar Otto Skjelbred · Org.nr.
+      <p><span data-i18n="footer.copy">&copy; 2026 Ivar Otto Skjelbred · Org.nr.</span>
         <a href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=929240839" target="_blank" rel="noopener noreferrer">929 240 839</a>
       </p>
-      <p class="footer-links"><a href="om-meg.html">Om meg</a><a href="personvern.html">Personvern</a></p>
+      <p class="footer-links"><a href="om-meg.html" data-i18n="nav.about">Om meg</a><a href="personvern.html" data-i18n="nav.privacy">Personvern</a></p>
     </div>
   </footer>
 </body>
