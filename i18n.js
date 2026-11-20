@@ -58,6 +58,10 @@ window.I18N = {
     'about.chipDO': 'Osteopath D.O. (Norway &amp; Switzerland)',
     'about.ctaTitle': 'Would you like to book an appointment?',
     'about.ctaText': 'Get in touch by email or phone.',
+    'about.bgTitle': 'Background and education',
+    'about.bgSub': 'Doctor of Physical Therapy (USA), Osteopath D.O. (Norway &amp; Switzerland)',
+    'about.p1': 'Ivar Otto Skjelbred has a solid foundation in manual medicine and has completed advanced training in biodynamic osteopathy in the United States. He studied under leading figures such as Dr. Viola Frymann at the Osteopathic Center for Children in San Diego – a clinical and educational center in collaboration with Western University of Health Sciences – as well as Dr. James Jealous, a key authority in traditional osteopathy and Osteopathy in the Cranial Field.',
+    'about.p2': 'Ivar holds a Doctor of Physical Therapy (DPT) degree from the USA and is a licensed osteopath D.O. in both Norway and Switzerland. With many years of clinical experience, Ivar combines a respectful, attentive approach with deep insight into the body’s innate self-healing processes – always in line with the original principles of osteopathic medicine.',
 
     // Privacy
     'privacy.title': 'Privacy – Osteopati Skjelbred',
@@ -129,6 +133,10 @@ window.I18N = {
     'about.chipDO': 'Osteopath D.O. (Norwegen &amp; Schweiz)',
     'about.ctaTitle': 'Möchten Sie einen Termin vereinbaren?',
     'about.ctaText': 'Kontaktieren Sie mich per E-Mail oder Telefon.',
+    'about.bgTitle': 'Dr. Ivar Otto Skjelbred, D.O., DPT',
+    'about.bgSub': 'Osteopath (Norwegen &amp; Schweiz), Doctor of Physical Therapy (USA)',
+    'about.p1': 'Skjelbred verfügt über ein fundiertes Wissen in der manuellen Medizin und hat eine spezialisierte Weiterbildung in biodynamischer Osteopathie in den USA absolviert. Er wurde unter anderem von renommierten Lehrern wie Dr. Viola Frymann am Osteopathic Center for Children in San Diego – einem klinischen und schulischen Zentrum in Zusammenarbeit mit der Western University of Health Sciences – sowie von Dr. James Jealous, einem führenden Vertreter der traditionellen Osteopathie und Cranialen Osteopathie, unterrichtet.',
+    'about.p2': 'Skjelbred hat in den USA den Abschluss Doctor of Physical Therapy (DPT) erworben und ist als Osteopath D.O. in Norwegen und der Schweiz anerkannt. Mit langjähriger klinischer Erfahrung verbindet Skjelbred eine respektvolle, zugewandte Haltung mit einem tiefen Verständnis für die Selbstheilungskräfte des Körpers – stets im Sinne der ursprünglichen Prinzipien der osteopathischen Medizin.',
 
     // Privacy
     'privacy.title': 'Datenschutz – Osteopati Skjelbred',

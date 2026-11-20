@@ -503,7 +503,6 @@ section[id] { scroll-margin-top: calc(var(--menu-h) + 16px); }
 .prose strong { color: var(--text); }
 
 /* Without JS all three languages are shown one after another */
-.lang-panel + .lang-panel { margin-top: 20px; }
 
 .cta-card {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px;

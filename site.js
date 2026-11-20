@@ -61,7 +61,6 @@
       if (o.html !== undefined) el.innerHTML = dict[el.dataset.i18n] ?? o.html;
       if (o.attrs) pairs(el).forEach(([a, k]) => el.setAttribute(a, dict[k] ?? o.attrs[a]));
     });
-    document.querySelectorAll('[data-lang-panel]').forEach(p => { p.hidden = p.dataset.langPanel !== lang; });
     root.lang = lang;
     root.dataset.lang = lang;
     if (langBtn) {
